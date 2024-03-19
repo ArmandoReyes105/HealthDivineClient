@@ -1,0 +1,159 @@
+﻿<Page x:Class="HealthDivineSysClient.View.AddPatient1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HealthDivineSysClient.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="730" d:DesignWidth="1266"
+      Background="{StaticResource BackgroundColor}"
+      Title="AddPatient1">
+
+    <Grid Margin="20">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!--Header-->
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <Button Content="&#xf177;" Background="Transparent" FontSize="24" Style="{StaticResource Icon_Button}"/>
+            <TextBlock Text="Dar de " Style="{StaticResource Title_Text}" Grid.Column="2"/>
+            <TextBlock Text="alta" Style="{StaticResource Title_Text}" Grid.Column="3" Foreground="{StaticResource AccentColor}"/>
+        </Grid>
+        
+        <!--Form-->
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Background="{StaticResource PrimaryColor}" CornerRadius="20" Grid.RowSpan="2"/>
+
+            <TextBlock Text="Datos personales del paciente" Style="{StaticResource Title_Text}" Margin="20"/>
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <ScrollViewer.Resources>
+                    <Style TargetType="ScrollBar" BasedOn="{StaticResource Normal_ScrollBar}"/>
+                </ScrollViewer.Resources>
+                <WrapPanel Grid.Row="1" Margin="20 0 20 20">
+                    <StackPanel>
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Detalles personales" Style="{StaticResource Subtitle_Text}" Margin="0 20"/>
+                            <TextBlock Style="{StaticResource Normal_Text}" Grid.Row="1" >
+<Run Text="Nombre(s)"/>
+<Run Text="*" Foreground="{StaticResource Red}"/>
+                            </TextBlock>
+                            <TextBox Grid.Row="2" Height="45" Width="300" Margin="0 10 0 15" Style="{StaticResource Normal_TextBox}"/>
+                            <TextBlock Style="{StaticResource Normal_Text}" Grid.Row="3">
+<Run Text="Primer apellido"/>
+<Run Text="*" Foreground="{StaticResource Red}"/>
+                            </TextBlock>
+                            <TextBox Grid.Row="4" Height="45" Width="300" Margin="0 10 0 10" Style="{StaticResource Normal_TextBox}"/>
+                            <TextBlock Text="Segundo apellido" Style="{StaticResource Normal_Text}" Grid.Row="3" Grid.Column="1" Margin="20 0"/>
+                            <TextBox Grid.Row="4" Grid.Column="1" Height="45" Width="300" Margin="20 10 0 10" Style="{StaticResource Normal_TextBox}"/>
+                            <Border Background="White" Grid.Column="2" Grid.RowSpan="5" Width="1" HorizontalAlignment="Center"/>
+                        </Grid>
+
+                        <StackPanel>
+                            <TextBlock Text="Detalles de contacto" Style="{StaticResource Subtitle_Text}" Margin="0 20"/>
+                            <TextBlock Style="{StaticResource Normal_Text}">
+                        <Run Text="Telefono "/>
+                        <Run Text="*" Foreground="{StaticResource Red}"/>
+                            </TextBlock>
+                            <TextBox Height="45" Width="300" Margin="0 10 0 10" Style="{StaticResource Normal_TextBox}" HorizontalAlignment="Left"/>
+                            <TextBlock Style="{StaticResource Normal_Text}">
+                        <Run Text="Correo electronico"/>
+                        <Run Text="*" Foreground="{StaticResource Red}"/>
+                            </TextBlock>
+                            <TextBox Height="45" Width="600" HorizontalAlignment="Left" Style="{StaticResource Normal_TextBox}"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="Detalles personales" Style="{StaticResource Subtitle_Text}" Margin="0 20"/>
+                        <TextBlock Style="{StaticResource Normal_Text}">
+        <Run Text="Fecha de nacimiento"/>
+        <Run Text="*" Foreground="{StaticResource Red}"/>
+                        </TextBlock>
+                        <TextBox Height="45" Width="300" Margin="0 10 0 10" Style="{StaticResource Normal_TextBox}" HorizontalAlignment="Left"/>
+                        <TextBlock Style="{StaticResource Normal_Text}">
+        <Run Text="Estatura"/>
+        <Run Text="*" Foreground="{StaticResource Red}"/>
+                        </TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Height="45" Width="65" Margin="0 10 0 10" Style="{StaticResource Normal_TextBox}" HorizontalAlignment="Left"/>
+                            <TextBlock Text="cm" VerticalAlignment="Center" Margin="20 0" Style="{StaticResource Normal_Text}"/>
+                        </StackPanel>
+                        <TextBlock Style="{StaticResource Normal_Text}" Margin="0 0 0 10">
+        <Run Text="Sexo"/>
+        <Run Text="*" Foreground="{StaticResource Red}"/>
+                        </TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton Tag="&#xf222;" Content="Masculino" Width="100" Height="100" Style="{StaticResource BigIcon_RadioButton}" IsChecked="True"/>
+                            <RadioButton Tag="&#xf221;" Content="Femenino" Width="100" Height="100" Style="{StaticResource BigIcon_RadioButton}" Margin="20 0"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                </WrapPanel>
+            </ScrollViewer>
+            
+
+        </Grid>
+        
+        <!--Footer-->
+        <DockPanel Grid.Row="2" Margin="0 10 0 0" HorizontalAlignment="Stretch">
+
+            <Grid HorizontalAlignment="Left" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                
+                <Border  Height="40" Width="40" Background="{StaticResource AccentColor}" CornerRadius="20" Grid.Column="0" Grid.ColumnSpan="2">
+                    <TextBlock Text="&#xf007;" Foreground="Black" FontFamily="{StaticResource FontAwesomeRegular}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                </Border>
+                <Border  Height="3"  Background="{StaticResource AccentColor}" Margin="-1" Grid.Column="1" Grid.ColumnSpan="3"/>
+                <Border  Height="40" Width="40" Background="{StaticResource BackgroundColor}" BorderBrush="{StaticResource AccentColor}" BorderThickness="2" CornerRadius="20" Grid.Column="3" Grid.ColumnSpan="2">
+                    <TextBlock Text="&#xf044;" Foreground="White" FontFamily="{StaticResource FontAwesomeRegular}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                </Border>
+                
+                <TextBlock Text="Datos personales" Style="{StaticResource Normal_Text}" Grid.Row="1" Margin="0 5 0 0" Grid.ColumnSpan="2"/>
+                <TextBlock Text="informacion sobre el paciente" Style="{StaticResource Normal_Text}" Grid.Row="2" Grid.Column="3" Margin="0 5 0 0" Grid.ColumnSpan="2"/>
+            </Grid>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Cancelar" Height="40" Width="200" MinWidth="150" Style="{StaticResource Border_Button}" Margin="10 0"/>
+                <Button Content="Siguiente" Height="40" Width="200" Style="{StaticResource Normal_Button}" Margin="10 0"/>
+            </StackPanel>
+        </DockPanel>
+        
+    </Grid>
+</Page>
