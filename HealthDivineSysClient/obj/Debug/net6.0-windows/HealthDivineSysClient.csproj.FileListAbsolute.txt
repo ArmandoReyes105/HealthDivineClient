@@ -85,3 +85,8 @@ C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de softwar
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\View\UserControls\PatientOptions.baml
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\View\ScheduleAppointmentPage.g.cs
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\View\ScheduleAppointmentPage.baml
+C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\View\AppointmentsPage.g.cs
+C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\View\UserControls\AppointmentControl.g.cs
+C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\View\AppointmentsPage.baml
+C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\View\UserControls\AppointmentControl.baml

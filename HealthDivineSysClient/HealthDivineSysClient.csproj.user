@@ -10,10 +10,16 @@
     <Compile Update="View\AddPatient1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\AppointmentsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\PatientsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\ScheduleAppointmentPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserControls\AppointmentControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\UserControls\OnelineTableText.xaml.cs">
@@ -57,10 +63,16 @@
     <Page Update="View\AddPatient1.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\AppointmentsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\PatientsPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ScheduleAppointmentPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\AppointmentControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\UserControls\OnelineTableText.xaml">

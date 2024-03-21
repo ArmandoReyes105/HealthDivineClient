@@ -24,7 +24,7 @@ namespace HealthDivineSysClient
 
 
             NavigationManager.Instance.Initialize(Frame_Main);
-            NavigationManager.Instance.NavigateTo(new ScheduleAppointmentPage(patient)); 
+            NavigationManager.Instance.NavigateTo(new AppointmentsPage()); 
         }
     }
 }
