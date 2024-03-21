@@ -10,6 +10,18 @@
     <Compile Update="View\AddPatient1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\PatientsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserControls\OnelineTableText.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserControls\PatientName.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserControls\PatientOptions.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
@@ -40,6 +52,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\AddPatient1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\PatientsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\OnelineTableText.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\PatientName.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\PatientOptions.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
