@@ -69,7 +69,7 @@ namespace HealthDivineSysClient.View.UserControls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HealthDivineSysClient;component/view/usercontrols/patientname.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HealthDivineSysClient;V1.0.0.0;component/view/usercontrols/patientname.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\UserControls\PatientName.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

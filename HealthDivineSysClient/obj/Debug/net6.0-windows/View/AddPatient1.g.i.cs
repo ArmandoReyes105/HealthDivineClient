@@ -53,7 +53,7 @@ namespace HealthDivineSysClient.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HealthDivineSysClient;component/view/addpatient1.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HealthDivineSysClient;V1.0.0.0;component/view/addpatient1.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\AddPatient1.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
