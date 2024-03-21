@@ -13,6 +13,9 @@
     <Compile Update="View\PatientsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\ScheduleAppointmentPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\UserControls\OnelineTableText.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +58,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\PatientsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ScheduleAppointmentPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\UserControls\OnelineTableText.xaml">
