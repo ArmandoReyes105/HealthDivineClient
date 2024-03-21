@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\App.xaml
-15-800392945
+151664843735
 
-14938735752
+14-2037376454
 208-1442323303
-MainWindow.xaml;Resources\Colors\Colors.xaml;Resources\Styles\ButtonStyles.xaml;Resources\Styles\Fonts.xaml;Resources\Styles\FrameStyles.xaml;Resources\Styles\RadioButtonStyles.xaml;Resources\Styles\ScrollBarStyles.xaml;Resources\Styles\TextBlockStyles.xaml;Resources\Styles\TextBoxStyles.xaml;View\AddPatient1.xaml;View\PatientsPage.xaml;View\ScheduleAppointmentPage.xaml;View\UserControls\OnelineTableText.xaml;View\UserControls\PatientName.xaml;View\UserControls\PatientOptions.xaml;
+MainWindow.xaml;Resources\Colors\Colors.xaml;Resources\Styles\ButtonStyles.xaml;Resources\Styles\Fonts.xaml;Resources\Styles\FrameStyles.xaml;Resources\Styles\RadioButtonStyles.xaml;Resources\Styles\ScrollBarStyles.xaml;Resources\Styles\TextBlockStyles.xaml;Resources\Styles\TextBoxStyles.xaml;View\AddPatientPage.xaml;View\PatientsPage.xaml;View\ScheduleAppointmentPage.xaml;View\UserControls\OnelineTableText.xaml;View\UserControls\PatientName.xaml;View\UserControls\PatientOptions.xaml;
 
 False
 

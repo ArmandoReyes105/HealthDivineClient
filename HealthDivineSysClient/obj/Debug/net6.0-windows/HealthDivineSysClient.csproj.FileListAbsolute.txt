@@ -8,13 +8,11 @@ C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de softwar
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\Resources\Styles\FrameStyles.baml
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\Resources\Styles\TextBlockStyles.baml
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\MainWindow.g.cs
-C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\View\AddPatient1.g.cs
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\HealthDivineSysClient_MarkupCompile.cache
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\HealthDivineSysClient_MarkupCompile.lref
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\App.baml
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\MainWindow.baml
-C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\View\AddPatient1.baml
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\HealthDivineSysClient.g.resources
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\HealthDivineSysClient.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\HealthDivineSysClient.AssemblyInfoInputs.cache
@@ -85,3 +83,5 @@ C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de softwar
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\View\UserControls\PatientOptions.baml
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\View\ScheduleAppointmentPage.g.cs
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\View\ScheduleAppointmentPage.baml
+C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\View\AddPatientPage.g.cs
+C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\obj\Debug\net6.0-windows\View\AddPatientPage.baml
