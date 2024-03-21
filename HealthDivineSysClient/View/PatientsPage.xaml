@@ -1,0 +1,113 @@
+﻿<Page x:Class="HealthDivineSysClient.View.PatientsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HealthDivineSysClient.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="770" d:DesignWidth="1306"
+      Background="{StaticResource BackgroundColor}"
+      Title="PatientsPage">
+
+    <Grid>
+        <!--Table-->
+        <Grid Name="Table_Grid" Margin="20" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--Header-->
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                <Button Content="&#xf177;" Style="{StaticResource Icon_Button}" Margin="0 0 15 0" FontSize="16" VerticalAlignment="Center"/>
+                <TextBlock Text="Mis" Style="{StaticResource Title_Text}"/>
+                <TextBlock Text=" Pacientes" Style="{StaticResource Title_Text}" Foreground="{StaticResource AccentColor}"/>
+            </StackPanel>
+
+            <!--Content-->
+            <Grid Grid.Row="1" Margin="0 20 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width ="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Nombre" Style="{StaticResource Subtitle_Text}" Foreground="Gray" HorizontalAlignment="Center"/>
+                <TextBlock Text="Contacto" Grid.Column="1" Style="{StaticResource Subtitle_Text}" Foreground="Gray" HorizontalAlignment="Center"/>
+                <TextBlock Text="Correo" Grid.Column="2" Style="{StaticResource Subtitle_Text}" Foreground="Gray" HorizontalAlignment="Center"/>
+                <TextBlock Text="Fecha de nacimiento" Grid.Column="3" Style="{StaticResource Subtitle_Text}" Foreground="Gray" HorizontalAlignment="Center"/>
+                <TextBlock Text="Opciones" Grid.Column="4" Style="{StaticResource Subtitle_Text}" Foreground="Gray" HorizontalAlignment="Center"/>
+
+                <StackPanel Name="Name_Panel" Grid.Column="0" Grid.Row="1"/>
+                <StackPanel Name="Contact_Panel" Grid.Column="1" Grid.Row="1"/>
+                <StackPanel Name="Email_Panel" Grid.Column="2" Grid.Row="1"/>
+                <StackPanel Name="Bithday_Panel" Grid.Column="3" Grid.Row="1"/>
+                <StackPanel Name="Options_Panel" Grid.Column="4" Grid.Row="1"/>
+            </Grid>
+        </Grid>
+        <!--Details-->
+        <Grid Name="Details_Grid" Visibility="Hidden" IsEnabled="False">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto" MinWidth="500" MaxWidth="600"/>
+            </Grid.ColumnDefinitions>
+            <Border Background="{StaticResource PrimaryColor}" Grid.Column="1" CornerRadius="20 0 0 20"/>
+            <StackPanel Grid.Column="1" Margin="30" MaxWidth="600">
+                <DockPanel>
+                    <Button Style="{StaticResource Icon_Button}" Content="&#xf177;" Click="CloseDetails"/>
+                    <Button Style="{StaticResource Icon_Button}" Content="&#xf303;" HorizontalAlignment="Right"/>
+                </DockPanel>
+                <Image Source="/Resources/Images/FemaleUser_Image.png" Height="100" Width="100"/>
+                <TextBlock Name="PatientName_TextBlock" Style="{StaticResource Subtitle_Text}" Text="Katherine Bautista Marquez" Margin="0 15" HorizontalAlignment="Center"/>
+                <Border Height="1" Background="White" Margin=" 0 0 0 15"/>
+                <!--Personal info-->
+                <TextBlock Name="Age_TextBlock" Text="Edad:21 años" Style="{StaticResource Normal_Text}"/>
+                <TextBlock Name="Birthdate_TextBlock" Text="Fecha de nacimiento:16-10-2002" Style="{StaticResource Normal_Text}"/>
+                <TextBlock Name="Height_TextBlock" Text="Estatura:155 cm" Style="{StaticResource Normal_Text}"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="&#xf2bb;" FontFamily="{StaticResource FontAwesomeRegular}" Foreground="White" FontSize="16" VerticalAlignment="Center"/>
+                    <StackPanel Margin="15 0 0 0">
+                        <TextBlock Name="Email_TextBlock" Text="Correo:ejemplo@gmail.com" Style="{StaticResource Normal_Text}" HorizontalAlignment="Right"/>
+                        <TextBlock Name="Phone_TextBlock" Text="Telefono:123-123-1234 cm" Style="{StaticResource Normal_Text}" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </StackPanel>
+                <Border Height="1" Background="White" Margin=" 0 15 0 15"/>
+                <!--Medical Info-->
+                <Grid MaxWidth="600">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" HorizontalAlignment="Left" Text="Enfermedades" Style="{StaticResource Subtitle_Text}" Foreground="{StaticResource AccentColor}" Margin="0 0 0 5"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="Alergias" Style="{StaticResource Subtitle_Text}" Foreground="{StaticResource AccentColor}"/>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Right" Text="Medicamentos" Style="{StaticResource Subtitle_Text}" Foreground="{StaticResource AccentColor}"/>
+
+                    <TextBlock Name="Enfermedades_TextBlock" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Text="Texto de ejemplo" Style="{StaticResource Normal_Text}" Margin="10 0" TextWrapping="Wrap" />
+                    <TextBlock Name="Allergies_TextBlock" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Text="Texto de ejemplo" Style="{StaticResource Normal_Text}" Margin="10 0" TextWrapping="Wrap"/>
+                    <TextBlock Name="Medicines_TextBlock" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" Text="Texto de ejemplo" Style="{StaticResource Normal_Text}" Margin="10 0" TextWrapping="Wrap"/>
+                </Grid>
+                <Border Background="White" Height="1" Margin="0 15"/>
+                <!--General info-->
+                <TextBlock Style="{StaticResource Subtitle_Text}" Foreground="{StaticResource AccentColor}" Text="Actividad fisica"/>
+                <TextBlock Name="PhysicalActivity_TextBlock" Style="{StaticResource Normal_Text}" Text="Texto de ejemplo" Margin="0 5 0 20" TextWrapping="Wrap"/>
+                <TextBlock Style="{StaticResource Subtitle_Text}" Foreground="{StaticResource AccentColor}" Text="Preferencias de comida"/>
+                <TextBlock Name="FoodPreference_TextBlock" Style="{StaticResource Normal_Text}" Text="Texto de ejemplo" Margin="0 5 0 20" TextWrapping="Wrap"/>
+                <TextBlock Style="{StaticResource Subtitle_Text}" Foreground="{StaticResource AccentColor}" Text="Comentarios generales"/>
+                <TextBlock Name="GeneralComments_TextBlock" Style="{StaticResource Normal_Text}" Text="Texto de ejemplo" Margin="0 5 0 15" TextWrapping="Wrap"/>
+            </StackPanel>
+            <Button Content="Historial" Style="{StaticResource Normal_Button}" Height="40" Width="150" Grid.Column="1" VerticalAlignment="Bottom" Margin="30"/>
+        </Grid>
+    </Grid>
+    
+</Page>

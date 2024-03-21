@@ -40,7 +40,8 @@
             <Border Background="{StaticResource PrimaryColor}" CornerRadius="20" Grid.RowSpan="2"/>
 
             <TextBlock Text="Datos personales del paciente" Style="{StaticResource Title_Text}" Margin="20"/>
-            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <!--First panel-->
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Visibility="Hidden">
                 <ScrollViewer.Resources>
                     <Style TargetType="ScrollBar" BasedOn="{StaticResource Normal_ScrollBar}"/>
                 </ScrollViewer.Resources>
@@ -62,13 +63,13 @@
 
                             <TextBlock Text="Detalles personales" Style="{StaticResource Subtitle_Text}" Margin="0 20"/>
                             <TextBlock Style="{StaticResource Normal_Text}" Grid.Row="1" >
-<Run Text="Nombre(s)"/>
-<Run Text="*" Foreground="{StaticResource Red}"/>
+                                <Run Text="Nombre(s)"/>
+                                <Run Text="*" Foreground="{StaticResource Red}"/>
                             </TextBlock>
                             <TextBox Grid.Row="2" Height="45" Width="300" Margin="0 10 0 15" Style="{StaticResource Normal_TextBox}"/>
                             <TextBlock Style="{StaticResource Normal_Text}" Grid.Row="3">
-<Run Text="Primer apellido"/>
-<Run Text="*" Foreground="{StaticResource Red}"/>
+                                <Run Text="Primer apellido"/>
+                                <Run Text="*" Foreground="{StaticResource Red}"/>
                             </TextBlock>
                             <TextBox Grid.Row="4" Height="45" Width="300" Margin="0 10 0 10" Style="{StaticResource Normal_TextBox}"/>
                             <TextBlock Text="Segundo apellido" Style="{StaticResource Normal_Text}" Grid.Row="3" Grid.Column="1" Margin="20 0"/>
@@ -116,6 +117,10 @@
                     </StackPanel>
 
                 </WrapPanel>
+            </ScrollViewer>
+            <!--Second panel-->
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                
             </ScrollViewer>
             
 

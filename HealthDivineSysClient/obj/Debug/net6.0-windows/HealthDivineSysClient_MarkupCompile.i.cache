@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\App.xaml
-10-676923710
+141098600970
 
-7-974680652
-194726069201
-MainWindow.xaml;Resources\Colors\Colors.xaml;Resources\Styles\ButtonStyles.xaml;Resources\Styles\Fonts.xaml;Resources\Styles\FrameStyles.xaml;Resources\Styles\RadioButtonStyles.xaml;Resources\Styles\ScrollBarStyles.xaml;Resources\Styles\TextBlockStyles.xaml;Resources\Styles\TextBoxStyles.xaml;View\AddPatient1.xaml;
+122099216998
+208-1442323303
+MainWindow.xaml;Resources\Colors\Colors.xaml;Resources\Styles\ButtonStyles.xaml;Resources\Styles\Fonts.xaml;Resources\Styles\FrameStyles.xaml;Resources\Styles\RadioButtonStyles.xaml;Resources\Styles\ScrollBarStyles.xaml;Resources\Styles\TextBlockStyles.xaml;Resources\Styles\TextBoxStyles.xaml;View\AddPatient1.xaml;View\PatientsPage.xaml;View\UserControls\OnelineTableText.xaml;View\UserControls\PatientName.xaml;View\UserControls\PatientOptions.xaml;
 
 False
 

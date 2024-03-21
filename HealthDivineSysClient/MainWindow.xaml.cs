@@ -4,9 +4,7 @@ using System.Windows;
 
 namespace HealthDivineSysClient
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -14,7 +12,7 @@ namespace HealthDivineSysClient
             InitializeComponent();
 
             NavigationManager.Instance.Initialize(Frame_Main);
-            NavigationManager.Instance.NavigateTo(new AddPatient1()); 
+            NavigationManager.Instance.NavigateTo(new PatientsPage()); 
         }
     }
 }
