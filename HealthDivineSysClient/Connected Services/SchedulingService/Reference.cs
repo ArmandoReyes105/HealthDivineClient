@@ -119,6 +119,9 @@ namespace SchedulingService
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Scheduling/GetAppointmentsByNutritionist", ReplyAction="http://tempuri.org/Scheduling/GetAppointmentsByNutritionistResponse")]
         System.Threading.Tasks.Task<SchedulingService.Appointment[]> GetAppointmentsByNutritionistAsync(int nutritionistId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Scheduling/GetAppointmentsByDay", ReplyAction="http://tempuri.org/Scheduling/GetAppointmentsByDayResponse")]
+        System.Threading.Tasks.Task<SchedulingService.Appointment[]> GetAppointmentsByDayAsync(System.DateTime day, int nutritionistId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -179,6 +182,11 @@ namespace SchedulingService
         public System.Threading.Tasks.Task<SchedulingService.Appointment[]> GetAppointmentsByNutritionistAsync(int nutritionistId)
         {
             return base.Channel.GetAppointmentsByNutritionistAsync(nutritionistId);
+        }
+        
+        public System.Threading.Tasks.Task<SchedulingService.Appointment[]> GetAppointmentsByDayAsync(System.DateTime day, int nutritionistId)
+        {
+            return base.Channel.GetAppointmentsByDayAsync(day, nutritionistId);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

@@ -27,11 +27,12 @@
         <WrapPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid>
                 <Border Background="{StaticResource PrimaryColor}" CornerRadius="20" Margin="10"/>
-                <StackPanel Margin="30" Name="Appointments_StackPanel">
+                <StackPanel Margin="30">
                     <TextBlock Style="{StaticResource Subtitle_Text}" Text="Seleccione una Fecha" Margin="0 0 0 5"/>
                     <TextBlock Name="CurrentDate_TextBlock" Style="{StaticResource Normal_Text}" Text="Fecha de hoy: 00-10-2024" Margin="0 0 0 15"/>
                     <DatePicker DisplayDateStart="2023-01-01" Margin="0 0 0 20" SelectedDateChanged="ConfigSelectedDate"/>
                     <TextBlock Name="Appointments_TextBlock" Style="{StaticResource Normal_Text}" Text="Mis citas de : 00-00-0000"/>
+                    <StackPanel Name="Appointments_StackPanel"/>
                 </StackPanel>
             </Grid>
             <Grid>
