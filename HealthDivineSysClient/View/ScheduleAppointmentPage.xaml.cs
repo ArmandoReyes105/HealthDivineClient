@@ -18,7 +18,6 @@ namespace HealthDivineSysClient.View
         public ScheduleAppointmentPage(Patient patient)
         {
             InitializeComponent();
-            LoadComboboxes();
             CurrentDate_TextBlock.Text = "La fecha de hoy es: " + DateTime.Now.ToShortDateString();
             this.patient = patient;
             PatientName_TextBlock.Text = patient.Person.Names + " " + patient.Person.FirstLastName + " " + patient.Person.SecondLastName; 
@@ -34,7 +33,7 @@ namespace HealthDivineSysClient.View
                 Appointments_TextBlock.Text = "Mis citas de: " + selectedDate.ToShortDateString();
                 SelectedDate_TextBlock.Text = "La fecha seleccionada es: " + selectedDate.ToShortDateString(); 
 
-                LoadAppointmentsAsync();
+                LoadAppointmentsAsync(selectedDate);
             }
             
         }
@@ -52,23 +51,38 @@ namespace HealthDivineSysClient.View
             cliente.CreateAppointmentAsync(appointment); 
         }
 
-        private async void LoadAppointmentsAsync()
+        private async void LoadAppointmentsAsync(DateTime selectedDate)
         {
+            LoadComboboxes();
             SchedulingClient client = new SchedulingClient();
-            var list = await client.GetAppointmentsByNutritionistAsync(2);
+            var list = await client.GetAppointmentsByDayAsync(selectedDate,2);
+
+            Appointments_StackPanel.Children.Clear();
+             
 
             if (list != null)
             {
-                foreach (var appointment in list)
+                if (list.Length > 0) 
                 {
-
+                    foreach (var appointment in list)
+                    {
+                        var appointmentPanel = new OnelineTableText();
+                        appointmentPanel.Height = 30;
+                        appointmentPanel.Text1_TextBlock.FontSize = 12;
+                        appointmentPanel.Text1_TextBlock.Text = appointment.StartTime.ToString() + " " + appointment.EndTime.ToString();
+                        Appointments_StackPanel.Children.Add(appointmentPanel);
+                        EraseHours(appointment); 
+                    }
+                }
+                else
+                {
                     var appointmentPanel = new OnelineTableText();
                     appointmentPanel.Height = 30;
-                    appointmentPanel.Text1_TextBlock.FontSize = 12; 
-                    appointmentPanel.Text1_TextBlock.Text = appointment.StartTime.ToString() + " " + appointment.EndTime.ToString();
+                    appointmentPanel.Text1_TextBlock.FontSize = 12;
+                    appointmentPanel.Text1_TextBlock.Text = "No hay citas guardadas";
                     Appointments_StackPanel.Children.Add(appointmentPanel);
-
                 }
+                
             }
         }
 
@@ -80,7 +94,7 @@ namespace HealthDivineSysClient.View
                 STMinutes_Combobox.Items.Add(i.ToString("00"));
             }
 
-            for (int i = 0; i <= 24; i++)
+            for (int i = 0; i <= 23; i++)
             {
                 ETHour_Combobox.Items.Add(i.ToString("00"));
                 STHour_Combobox.Items.Add(i.ToString("00"));
@@ -123,6 +137,18 @@ namespace HealthDivineSysClient.View
                 SelectedTime_TextBlock.Text = "Horario: " + STH + ":" + STM + "-" + ETH + ":" + ETM;
             }
 
+        }
+
+        private void EraseHours(Appointment appointment)
+        {
+            for (int i = 0; i <= 23; i++)
+            {
+                if(i >= appointment.StartTime.Hours && i <= appointment.EndTime.Hours)
+                {
+                    ETHour_Combobox.Items.Remove(i.ToString("00"));
+                    STHour_Combobox.Items.Remove(i.ToString("00"));
+                }
+            }
         }
     }
 }
