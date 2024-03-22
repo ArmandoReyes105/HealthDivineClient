@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HealthDivineSysClient.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,7 @@ namespace HealthDivineSysClient.View.UserControls
     public partial class PatientOptions : UserControl
     {
         Patient patient = new Patient();
-        PatientsPage patientsPage = new PatientsPage();
+        PatientsPage patientsPage = null;
 
         public PatientOptions()
         {
@@ -39,6 +40,11 @@ namespace HealthDivineSysClient.View.UserControls
         private void ShowDetails(object sender, RoutedEventArgs e)
         {
             this.patientsPage.ShowDetails(this.patient);
+        }
+
+        private void ScheduleAppointment(object sender, RoutedEventArgs e)
+        {
+            NavigationManager.Instance.NavigateTo(new ScheduleAppointmentPage(patient));
         }
     }
 }

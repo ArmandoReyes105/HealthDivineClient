@@ -8,7 +8,7 @@
              Height="70" d:DesignWidth="800">
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <Button Content="&#xf271;" Style="{StaticResource Icon_Button}" FontFamily="{StaticResource FontAwesomeRegular}" FontSize="16"/>
+            <Button Content="&#xf271;" Style="{StaticResource Icon_Button}" FontFamily="{StaticResource FontAwesomeRegular}" FontSize="16" Click="ScheduleAppointment"/>
         </StackPanel>
         <Button Content="Ver" Style="{StaticResource Normal_Button}" Height="35" Width="60" HorizontalAlignment="Right" Click="ShowDetails"/>
         <Border Background="{StaticResource PrimaryTextColor}" Height="1" VerticalAlignment="Bottom"/>

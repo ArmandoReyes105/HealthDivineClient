@@ -11,7 +11,7 @@
 
     <Grid>
         <!--Table-->
-        <Grid Name="Table_Grid" Margin="20" >
+        <Grid Name="Table_Grid" Margin="20 20 20 64" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
@@ -108,6 +108,8 @@
             </StackPanel>
             <Button Content="Historial" Style="{StaticResource Normal_Button}" Height="40" Width="150" Grid.Column="1" VerticalAlignment="Bottom" Margin="30"/>
         </Grid>
+
+        <Button Content="Agregar paciente" Style="{StaticResource Normal_Button}" Height="45" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20" Click="AddPatient"/>
     </Grid>
     
 </Page>

@@ -1,4 +1,5 @@
-﻿using HealthDivineSysClient.View.UserControls;
+﻿using HealthDivineSysClient.Helpers;
+using HealthDivineSysClient.View.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -83,6 +84,11 @@ namespace HealthDivineSysClient.View
             Details_Grid.Visibility = Visibility.Hidden;
 
             Table_Grid.IsEnabled = true;
+        }
+
+        private void AddPatient(object sender, RoutedEventArgs e)
+        {
+            NavigationManager.Instance.NavigateTo(new AddPatient1()); 
         }
     }
 }

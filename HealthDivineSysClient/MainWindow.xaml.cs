@@ -12,7 +12,7 @@ namespace HealthDivineSysClient
         {
             InitializeComponent();
 
-            Person person = new Person();
+            /*Person person = new Person();
             person.Names = "Cinthia";
             person.FirstLastName = "Gonzalez";
             person.SecondLastName = "Hernandez";
@@ -20,11 +20,11 @@ namespace HealthDivineSysClient
 
             Patient patient = new Patient();
             patient.IdPatient = 1;
-            patient.Person = person;
+            patient.Person = person;*/
 
 
             NavigationManager.Instance.Initialize(Frame_Main);
-            NavigationManager.Instance.NavigateTo(new ScheduleAppointmentPage(patient)); 
+            NavigationManager.Instance.NavigateTo(new PatientsPage()); 
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using HealthDivineSysClient.View.UserControls;
+﻿using HealthDivineSysClient.Helpers;
+using HealthDivineSysClient.View.UserControls;
 using SchedulingService;
 using System;
 using System.Windows;
@@ -49,6 +50,11 @@ namespace HealthDivineSysClient.View
 
             SchedulingClient cliente = new SchedulingClient();
             cliente.CreateAppointmentAsync(appointment); 
+        }
+
+        private void CancelAppointment(object sender, RoutedEventArgs e)
+        {
+            NavigationManager.Instance.NavigateTo(new PatientsPage());
         }
 
         private async void LoadAppointmentsAsync(DateTime selectedDate)
