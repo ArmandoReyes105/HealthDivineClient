@@ -1,5 +1,35 @@
 ﻿
 FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\App.xaml;;
 FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\MainWindow.xaml;;
-FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\View\AddPatient1.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\PlanManagementModule\CreateMealPlan\View\CreatePlanPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\PlanManagementModule\ExportPDF\View\ExportPlanPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\PlanManagementModule\UpdateMealPlan\View\UpdateMealPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\ProgressManagementModule\ConsultHistory\View\HistoryPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\ProgressManagementModule\ConsultHistory\View\MeasureHistoryControl.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\ProgressManagementModule\CreateProgressRecord\View\DiagnosisFormPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\ProgressManagementModule\CreateProgressRecord\View\MeasuresFormPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\ProgressManagementModule\ModifyProgressRecord\View\ModifyDiagnosisPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\SchedulingModule\CheckCalendar\View\AppointmentControl.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\SchedulingModule\CheckCalendar\View\CalendarPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\SchedulingModule\ModifyAppointment\View\ModifyAppointmentPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\SchedulingModule\ScheduleAppointment\View\ScheduleAppointmentPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\UserManagementModule\ConsultPatient\View\PatientInfoPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\UserManagementModule\ConsultPatient\View\PatientListPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\UserManagementModule\ModifyPatient\View\ModifyMedicalPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\UserManagementModule\ModifyPatient\View\ModifyPatientPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\UserManagementModule\RegisterPatient\View\GoalsFormPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\UserManagementModule\RegisterPatient\View\MedicalFormPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\UserManagementModule\RegisterPatient\View\NutritionalFormPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\UserManagementModule\RegisterPatient\View\PersonalFormPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\UserManagementModule\RegisterPatient\View\RegistrationResultPage.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\View\Dialogs\ConfirmationDialog.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\View\Dialogs\Dialog.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\View\UserControls\BigButtonControl.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\View\UserControls\ConsultChartControl.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\View\UserControls\DatePickerControl.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\View\UserControls\DividerControl.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\View\UserControls\PatientCardControl.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\View\UserControls\ProgressCircleControl.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\View\UserControls\ShortAppointmentControl.xaml;;
+FC:\Users\Armando Reyes\OneDrive\Documentos\UV\6TO SEMESTRE\Desarrollo de software\Health Divine\HealthDivineSysClient\HealthDivineSysClient\Modules\ProgressManagementModule\ConsultHistory\View\CompositionHistoryControl.xaml;;
 

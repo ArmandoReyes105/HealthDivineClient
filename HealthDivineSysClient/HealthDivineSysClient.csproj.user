@@ -7,7 +7,97 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="View\AddPatient1.xaml.cs">
+    <Compile Update="Modules\PlanManagementModule\CreateMealPlan\View\CreatePlanPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\PlanManagementModule\ExportPDF\View\ExportPlanPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\PlanManagementModule\UpdateMealPlan\View\UpdateMealPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\ProgressManagementModule\ConsultHistory\View\CompositionHistoryControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\ProgressManagementModule\ConsultHistory\View\HistoryPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\ProgressManagementModule\ConsultHistory\View\MeasureHistoryControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\ProgressManagementModule\CreateProgressRecord\View\DiagnosisFormPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\ProgressManagementModule\CreateProgressRecord\View\MeasuresFormPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\ProgressManagementModule\ModifyProgressRecord\View\ModifyDiagnosisPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\SchedulingModule\CheckCalendar\View\AppointmentControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\SchedulingModule\CheckCalendar\View\CalendarPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\SchedulingModule\ModifyAppointment\View\ModifyAppointmentPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\SchedulingModule\ScheduleAppointment\View\ScheduleAppointmentPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\UserManagementModule\ConsultPatient\View\PatientInfoPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\UserManagementModule\ConsultPatient\View\PatientListPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\UserManagementModule\ModifyPatient\View\ModifyMedicalPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\UserManagementModule\ModifyPatient\View\ModifyPatientPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\UserManagementModule\RegisterPatient\View\GoalsFormPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\UserManagementModule\RegisterPatient\View\MedicalFormPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\UserManagementModule\RegisterPatient\View\NutritionalFormPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\UserManagementModule\RegisterPatient\View\RegistrationResultPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Dialogs\ConfirmationDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Dialogs\Dialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\UserManagementModule\RegisterPatient\View\PersonalFormPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserControls\BigButtonControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserControls\ConsultChartControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserControls\DatePickerControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserControls\DividerControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserControls\PatientCardControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserControls\ProgressCircleControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserControls\ShortAppointmentControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -15,10 +105,61 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Modules\PlanManagementModule\CreateMealPlan\View\CreatePlanPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\PlanManagementModule\ExportPDF\View\ExportPlanPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\PlanManagementModule\UpdateMealPlan\View\UpdateMealPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\ProgressManagementModule\ConsultHistory\View\CompositionHistoryControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\ProgressManagementModule\ConsultHistory\View\HistoryPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\ProgressManagementModule\ConsultHistory\View\MeasureHistoryControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\ProgressManagementModule\CreateProgressRecord\View\DiagnosisFormPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\ProgressManagementModule\CreateProgressRecord\View\MeasuresFormPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\ProgressManagementModule\ModifyProgressRecord\View\ModifyDiagnosisPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\SchedulingModule\CheckCalendar\View\AppointmentControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\SchedulingModule\CheckCalendar\View\CalendarPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\SchedulingModule\ModifyAppointment\View\ModifyAppointmentPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\SchedulingModule\ScheduleAppointment\View\ScheduleAppointmentPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\UserManagementModule\ConsultPatient\View\PatientInfoPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\UserManagementModule\ModifyPatient\View\ModifyMedicalPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\UserManagementModule\ModifyPatient\View\ModifyPatientPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Resources\Colors\Colors.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Styles\CalendarStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\Styles\Fonts.xaml">
@@ -39,7 +180,49 @@
     <Page Update="Resources\Styles\TextBoxStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\AddPatient1.xaml">
+    <Page Update="Modules\UserManagementModule\ConsultPatient\View\PatientListPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\UserManagementModule\RegisterPatient\View\GoalsFormPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\UserManagementModule\RegisterPatient\View\MedicalFormPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\UserManagementModule\RegisterPatient\View\NutritionalFormPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\UserManagementModule\RegisterPatient\View\RegistrationResultPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Dialogs\ConfirmationDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Dialogs\Dialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\UserManagementModule\RegisterPatient\View\PersonalFormPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\BigButtonControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\ConsultChartControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\DatePickerControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\DividerControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\PatientCardControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\ProgressCircleControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\ShortAppointmentControl.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

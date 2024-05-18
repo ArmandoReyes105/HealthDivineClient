@@ -1,0 +1,152 @@
+﻿<Page x:Class="HealthDivineSysClient.Modules.UserManagementModule.RegisterPatient.View.PersonalFormPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HealthDivineSysClient.View.UserControls"
+      xmlns:ViewModel="clr-namespace:HealthDivineSysClient.Modules.UserManagementModule.RegisterPatient.ViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="770" d:DesignWidth="1306"
+      Title="AddPatientPage"
+      Background="{StaticResource BackgroundColor}">
+
+    <Page.DataContext>
+        <ViewModel:PersonalFormViewModel/>
+    </Page.DataContext>
+    
+    <Grid Margin="20" Name="Main_Grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!--Header-->
+        <StackPanel Orientation="Horizontal">
+            <Button Content="&#xf177;" Style="{StaticResource Icon_Button}" VerticalAlignment="Center" Margin="0 0 15 0" Command="{Binding CancelCommand}"/>
+            <TextBlock Text="Mis pacientes >> Dar de alta paciente >> Información personal" Style="{StaticResource Normal_Text}" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock Text="Dar de " Style="{StaticResource Title_Text}"/>
+            <TextBlock Text="alta" Style="{StaticResource Title_Text}" Foreground="{StaticResource AccentColor}"/>
+        </StackPanel>
+        
+        <!--Content-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!--Progress Bar-->
+            <StackPanel Margin="0 20 0 0">
+                <local:ProgressCircleControl x:Name="Personal_ProgressControl" Icon="&#xf2bd;" Text="Información personal"/>
+                <local:ProgressCircleControl x:Name="Medical_ProgressControl" Icon="&#xf477;"  Text="Historial médico"/>
+                <local:ProgressCircleControl x:Name="Nutritional_ProgressControl" Icon="&#xf06c;"  Text="Historial nutricional"/>
+                <local:ProgressCircleControl x:Name="Objectives_ProgressControl" Icon="&#xf091;" LineVisibility="Hidden" Text="Objetivos y Hábitos"/>
+            </StackPanel>
+
+            <!--Form-->
+            <Grid Name="Form_Grid" Grid.Column="1" Margin="40 20 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                
+
+                <TextBlock Name="Header_TextBlock" Text="Información personal" Style="{StaticResource Title_Text}"/>
+                <!--Personal Form-->
+                <ScrollViewer Name="Personal_Panel" Grid.Row="1" VerticalScrollBarVisibility="Auto" MinWidth="500" HorizontalScrollBarVisibility="auto" Style="{StaticResource Nomal_ScrollViewer}" Visibility="Visible">
+                    <Grid Grid.Row="1" Margin="0 20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel>
+                            <local:DividerControl DividerText="Nombre completo"/>
+                            <TextBlock Text="Nombre(s)" Style="{StaticResource Small_Text}"><Run Text=" *" Foreground="Red"/></TextBlock>
+                            <TextBox Style="{StaticResource Normal_TextBox}" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Tag="Nombre" Width="270"  HorizontalAlignment="Left" MaxLength="50"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Margin="0 0 5 0">
+                                    <TextBlock Text="Primer apelllido" Style="{StaticResource Small_Text}"><Run Text=" * " Foreground="Red"/></TextBlock>
+                                    <TextBox Style="{StaticResource Normal_TextBox}" Text="{Binding FirstLastName, UpdateSourceTrigger=PropertyChanged}" Tag="Primer apellido" Width="270" HorizontalAlignment="Left" MaxLength="50"/>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Margin="5 0 0 0">
+                                    <TextBlock Text="Segundo apelllido" Style="{StaticResource Small_Text}"><Run Text=" * " Foreground="Red"/></TextBlock>
+                                    <TextBox Style="{StaticResource Normal_TextBox}" Text="{Binding SecondLastName, UpdateSourceTrigger=PropertyChanged}" Tag="Segundo apellido" Width="270" HorizontalAlignment="Left" MaxLength="50"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <local:DividerControl DividerText="Contacto"/>
+                            <TextBlock Text="Teléfono" Style="{StaticResource Small_Text}"><Run Text=" * " Foreground="Red"/></TextBlock>
+                            <TextBox 
+                                Style="{StaticResource Normal_TextBox}" 
+                                Text="{Binding Phone, UpdateSourceTrigger=PropertyChanged}" 
+                                Tag="000-000-0000" 
+                                Width="270" 
+                                CommandManager.PreviewExecuted="ValidateNoPaste"
+                                PreviewTextInput="ValidateOnlyNumbers" 
+                                PreviewKeyDown="ValidateNoBlanckSpace" 
+                                HorizontalAlignment="Left" 
+                                MaxLength="12"/>
+                            <TextBlock Text="Correo electronico" Style="{StaticResource Small_Text}"><Run Text=" * " Foreground="Red"/></TextBlock>
+                            <TextBox Style="{StaticResource Normal_TextBox}" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" Tag="ejemplo@gmail.com" MaxLength="250"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Margin="30 0 0 0">
+                            <local:DividerControl DividerText="Información"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Fecha de nacimiento" Style="{StaticResource Small_Text}"><Run Text=" *" Foreground="Red"/></TextBlock>
+                                <TextBlock Text="Edad: 00 años" Grid.Column="1" Style="{StaticResource Small_Text}"/>
+                                <TextBlock Text="Estatura" Grid.Column="2" Style="{StaticResource Small_Text}"><Run Text=" *" Foreground="Red"/></TextBlock>
+                                <TextBlock Text="Metros" Grid.Column="3" Grid.Row="1" Style="{StaticResource Small_Text}" VerticalAlignment="Top" Margin="10 20"/>
+
+                                <local:DatePickerControl Text="{Binding Birthday, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.ColumnSpan="2" Margin="0 0 10 0" Width="270"/>
+                                <TextBox 
+                                    Grid.Row="1" 
+                                    Grid.Column="2" 
+                                    Style="{StaticResource Normal_TextBox}" 
+                                    Text="{Binding Height, UpdateSourceTrigger=PropertyChanged}" 
+                                    Tag="0.00" Width="70" 
+                                    CommandManager.PreviewExecuted="ValidateNoPaste"
+                                    PreviewTextInput="ValidateOnlyNumbers" 
+                                    PreviewKeyDown="ValidateNoBlanckSpace" 
+                                    HorizontalAlignment="Left" 
+                                    VerticalAlignment="Top" 
+                                    MaxLength="4"/>
+                            </Grid>
+                            <TextBlock Text="Sexo" Style="{StaticResource Small_Text}" Cursor=""><Run Text=" *" Foreground="Red"/></TextBlock>
+                            <StackPanel Orientation="Horizontal" Margin="0 5 0 15">
+                                <RadioButton Style="{StaticResource BigIcon_RadioButton}" Command="{Binding ChangeGender}" CommandParameter="M" Content="Masculino" IsChecked="True" Tag="&#xf222;"/>
+                                <RadioButton Style="{StaticResource BigIcon_RadioButton}" Command="{Binding ChangeGender}" CommandParameter="F" Content="Femenino" Tag="&#xf221;" Margin="10 0"/>
+                            </StackPanel>
+                            <TextBlock Text="* El correo debe ser @gmail.com" Style="{StaticResource Small_Text}" HorizontalAlignment="Right"/>
+                            <TextBlock Text="* Indica campos obligatorios" Style="{StaticResource Small_Text}" HorizontalAlignment="Right"><Run Text=" *" Foreground="Red"/></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+
+                <Border Name="Animation_Border" Background="{StaticResource BackgroundColor}" Grid.RowSpan="2" Height="0" VerticalAlignment="Top"/>
+                <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
+                    <Button Command="{Binding CancelCommand}" Content="Cancelar" Grid.Row="2" Width="200" Style="{StaticResource Border_Button}" Margin="0 0 15 0"/>
+                    <Button Width="200" Content="Siguiente" Style="{StaticResource Normal_Button}"  Command="{Binding NextCommand}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

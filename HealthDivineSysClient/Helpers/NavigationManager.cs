@@ -1,12 +1,14 @@
-﻿using System.Windows.Controls; 
+﻿using System.Windows;
+using System.Windows.Controls; 
 
 namespace HealthDivineSysClient.Helpers
 {
     public class NavigationManager
     {
 
-        private static NavigationManager _instance;
+        private static NavigationManager _instance = new();
         private Frame _mainFrame;
+        private MainWindow _window; 
 
         private NavigationManager() { }
 
@@ -22,9 +24,10 @@ namespace HealthDivineSysClient.Helpers
             }
         }
 
-        public void Initialize(Frame mainFrame)
+        public void Initialize(Frame mainFrame, MainWindow mainWindow)
         {
             _mainFrame = mainFrame;
+            _window = mainWindow;
         }
 
         public void NavigateTo(Page page)
@@ -33,6 +36,19 @@ namespace HealthDivineSysClient.Helpers
             {
                 _mainFrame.Navigate(page);
             }
+        }
+
+        public void NavigateBack()
+        {
+            if(_mainFrame != null)
+            {
+                _mainFrame.GoBack();
+            }
+        }
+
+        public MainWindow GetMainWindow()
+        {
+            return _window; 
         }
 
     }

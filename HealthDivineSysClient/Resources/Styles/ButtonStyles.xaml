@@ -6,6 +6,7 @@
         <Setter Property="FontFamily" Value="{DynamicResource FontAwesomeSolid}"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="24"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -24,8 +25,9 @@
 
     <Style x:Key="Normal_Button" TargetType="Button">
 
-        <Setter Property="FontFamily" Value="{DynamicResource Comfortaa-Regular}"/>
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="{DynamicResource Comfortaa-Bold}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Height" Value="40"/>
         <Setter Property="Background" Value="{DynamicResource AccentColor}"/>
         <Setter Property="Foreground" Value="{DynamicResource SecondaryTextColor}"/>
         <Setter Property="Template">
@@ -44,10 +46,33 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="Underline_Button" TargetType="Button">
+
+        <Setter Property="FontFamily" Value="{DynamicResource Comfortaa-Regular}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource HolderTextColor}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderThickness="0 0 0 1" Cursor="Hand" BorderBrush="{TemplateBinding Foreground}" CornerRadius="1">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource AccentColor}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <Style x:Key="Border_Button" TargetType="Button">
 
         <Setter Property="FontFamily" Value="{DynamicResource Comfortaa-Regular}"/>
         <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Height" Value="40"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource PrimaryTextColor}"/>
@@ -64,6 +89,30 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="BorderBrush" Value="{DynamicResource AccentColor}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="Circle_Button" TargetType="Button">
+
+        <Setter Property="FontFamily" Value="{DynamicResource FontAwesomeSolid}"/>
+        <Setter Property="Background" Value="{DynamicResource BackgroundColor}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Width" Value="32"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderThickness="0" Cursor="Hand" CornerRadius="32">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource SecondaryTextColor}"/>
+                <Setter Property="Background" Value="{DynamicResource AccentColor}"/>
             </Trigger>
         </Style.Triggers>
     </Style>

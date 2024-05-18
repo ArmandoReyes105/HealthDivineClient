@@ -1,0 +1,201 @@
+﻿<Page x:Class="HealthDivineSysClient.Modules.UserManagementModule.ConsultPatient.View.PatientInfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HealthDivineSysClient.Modules.UserManagementModule.ConsultPatient.View"
+      xmlns:Controls="clr-namespace:HealthDivineSysClient.View.UserControls"
+      mc:Ignorable="d" 
+      d:DesignHeight="770" d:DesignWidth="1306"
+      Title="PatientInfoPage">
+
+    <Grid Name="Main_Grid" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Header-->
+        <DockPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Button Content="&#xf177;" Style="{StaticResource Icon_Button}" Margin="0 0 10 0" VerticalAlignment="Center" Command="{Binding ReturnCommand}"/>
+                <TextBlock Text="Mis pacientes >> " Style="{StaticResource Normal_Text}" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding Patient.Person.Names}" Style="{StaticResource Normal_Text}" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Mi " Style="{StaticResource Title_Text}"/>
+                <TextBlock Text=" Paciente" Style="{StaticResource Title_Text}" Foreground="{StaticResource AccentColor}"/>
+            </StackPanel>
+        </DockPanel>
+
+        <!--Personal Content-->
+        <Grid Grid.Row="1" Margin="0 20 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <Border Background="{StaticResource PrimaryColor}" CornerRadius="5">
+                <Grid Margin="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Controls:DividerControl DividerText="Información personal"/>
+
+                    <!--Personal Info-->
+                    <Grid Grid.Row="1" Visibility="Visible">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{Binding GenderImage}" Height="100" Width="100" VerticalAlignment="Top"/>
+
+                        <Grid Grid.Column="1" Margin="15 0 0 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <DockPanel>
+                                <StackPanel HorizontalAlignment="Left">
+                                    <TextBlock Text="{Binding Patient.Person.Names}" Style="{StaticResource Subtitle_Text}"/>
+                                    <StackPanel Orientation="Horizontal" Margin="0 3 0 0">
+                                        <TextBlock Text="{Binding Patient.Person.FirstLastName}" Style="{StaticResource Normal_Text}" Foreground="{StaticResource HolderTextColor}"/>
+                                        <TextBlock Text="{Binding Patient.Person.SecondLastName}" Style="{StaticResource Normal_Text}" Foreground="{StaticResource HolderTextColor}" Margin="5 0"/>
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <Button Content="&#xf304;" Style="{StaticResource Icon_Button}" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="15" Command="{Binding EditInfoCommand}" CommandParameter="1"/>
+                            </DockPanel>
+
+                            <Grid Grid.Row="1" Margin="0 15 0 10">
+                                <Border Background="{StaticResource PrimaryTextColor}" Height="1" CornerRadius="1" VerticalAlignment="Bottom"/>
+                            </Grid>
+
+                            <DockPanel Grid.Row="2">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="15 0 0 0">
+                                    <StackPanel VerticalAlignment="Bottom" Margin="0 0 0 5" Orientation="Horizontal">
+                                        <TextBlock Text="&#xf545; " Style="{StaticResource Solid_Icon}" Foreground="#f7a824" Margin="0 0 0 5" FontSize="15" VerticalAlignment="Center"/>
+                                        <StackPanel Margin="5 0 0 0">
+                                            <TextBlock Text="Estatura: " Style="{StaticResource Small_Text}" Foreground="{StaticResource HolderTextColor}"/>
+                                            <TextBlock Text="{Binding Patient.Height}" Style="{StaticResource Normal_Text}" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel VerticalAlignment="Bottom" Margin="15 0 15 5" Orientation="Horizontal">
+                                        <TextBlock Text="&#xf228; " Style="{StaticResource Solid_Icon}" Foreground="#3BB6B7"  Margin="0 0 0 5" FontSize="15" VerticalAlignment="Center"/>
+                                        <StackPanel Margin="5 0 0 0">
+                                            <TextBlock Text="Sexo: " Style="{StaticResource Small_Text}" Foreground="{StaticResource HolderTextColor}"/>
+                                            <TextBlock Text="{Binding Gender}" Style="{StaticResource Normal_Text}" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel VerticalAlignment="Bottom" Margin="0 0 0 5" Orientation="Horizontal">
+                                        <TextBlock Text="&#xf1fd; " Style="{StaticResource Solid_Icon}" Foreground="#63B945"  Margin="0 0 0 5" FontSize="15" VerticalAlignment="Center"/>
+                                        <StackPanel Margin="5 0 0 0">
+                                            <TextBlock Text="Edad: " Style="{StaticResource Small_Text}" Foreground="{StaticResource HolderTextColor}"/>
+                                            <TextBlock Text="{Binding Age}" Style="{StaticResource Normal_Text}" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                                
+                                <StackPanel HorizontalAlignment="Right">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                        <TextBlock Text="Correo: " Style="{StaticResource Normal_Text}" Foreground="{StaticResource HolderTextColor}"/>
+                                        <TextBlock Text="{Binding Patient.Person.Email}" Style="{StaticResource Normal_Text}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                        <TextBlock Text="Telefono: " Style="{StaticResource Normal_Text}" Foreground="{StaticResource HolderTextColor}"/>
+                                        <TextBlock Text="{Binding Patient.Person.Phone}" Style="{StaticResource Normal_Text}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DockPanel>
+                            
+                        </Grid>
+
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <StackPanel Grid.Column="1" Margin="20 0 0 0">
+                <Button Content="Agregar registro" Width="170" Style="{StaticResource Normal_Button}" Command="{Binding ProgressRecordCommand}" CommandParameter="1"/>
+                <Button Content="Crear Plan" Width="170" Style="{StaticResource Normal_Button}" Command="{Binding MealPlanCommand}" CommandParameter="1" Margin="0 10 0 0"/>
+                <Button Content="Enviar Plan" Width="170" Style="{StaticResource Normal_Button}" Command="{Binding MealPlanCommand}" CommandParameter="3" Margin="0 10 0 0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Margin="20 0 0 0">
+                <Button Content="Modificar registro" Width="170" Style="{StaticResource Border_Button}" Command="{Binding ProgressRecordCommand}" CommandParameter="2" Margin="0 0 0 0"/>
+                <Button Content="Modificar plan" Width="170" Style="{StaticResource Border_Button}" Command="{Binding MealPlanCommand}" CommandParameter="2" Margin="0 10 0 0"/>
+                <Button Content="Ver historial" Width="170" Style="{StaticResource Normal_Button}" Command="{Binding HistoryCommand}"/>
+            </StackPanel>
+
+        </Grid>
+
+        <!--RadioButtons-->
+        <StackPanel Grid.Row="2" Margin="0 20 0 0" Orientation="Horizontal">
+            <RadioButton Width="120" Style="{StaticResource BigIcon_RadioButton}" Tag="&#xf21e;" Content="Medica" IsChecked="True" Height="65"/>
+        </StackPanel>
+
+        <!--Medical panel-->
+        
+        <Border Grid.Row="3" Background="{StaticResource PrimaryColor}" CornerRadius="5" Margin="0 20 0 0">
+            <Grid Grid.Row="3" Margin="15">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Controls:DividerControl DividerText="Información Médica"/>
+                <Button Grid.Column="1" Content="&#xf304;" HorizontalAlignment="Right" FontSize="15" Style="{StaticResource Icon_Button}" Command="{Binding EditInfoCommand}" CommandParameter="2"/>
+
+                <StackPanel Grid.Row="1" Margin="0 0 10 0">
+                    <TextBlock Text="Enfermedades crónicas" Foreground="{StaticResource HolderTextColor}" Style="{StaticResource Small_Text}" Margin="0 15 0 0"/>
+                    <TextBlock Text="{Binding MedicalInformation.ChronicDiseases}" Style="{StaticResource Normal_Text}" TextWrapping="Wrap" Margin="0 5 0 0"/>
+
+                    <TextBlock Text="Antecedentes heredo-familiares" Foreground="{StaticResource HolderTextColor}" Style="{StaticResource Small_Text}" Margin="0 15 0 0"/>
+                    <TextBlock Text="{Binding MedicalInformation.HereditaryFamilyHistory}" Style="{StaticResource Normal_Text}" TextWrapping="Wrap" Margin="0 5 0 0"/>
+
+                    <TextBlock Text="Enfermedades gastrointestinales" Foreground="{StaticResource HolderTextColor}" Style="{StaticResource Small_Text}" Margin="0 15 0 0"/>
+                    <TextBlock Text="{Binding MedicalInformation.GastrointestinalDiseases}" Style="{StaticResource Normal_Text}" TextWrapping="Wrap" Margin="0 5 0 0"/>
+
+                    <Border Background="{StaticResource AccentColor}" Height="1" Margin="0 15 0 0"/>
+
+                    <TextBlock Text="Alergias Alimenticias" Foreground="{StaticResource HolderTextColor}" Style="{StaticResource Small_Text}" Margin="0 15 0 0"/>
+                    <TextBlock Text="{Binding MedicalInformation.FoodAllergies}" Style="{StaticResource Normal_Text}" TextWrapping="Wrap" Margin="0 5 0 0"/>
+
+                    <TextBlock Text="Alergias NO Alimenticias" Foreground="{StaticResource HolderTextColor}" Style="{StaticResource Small_Text}" Margin="0 15 0 0"/>
+                    <TextBlock Text="{Binding MedicalInformation.NonFoodAllergies}" Style="{StaticResource Normal_Text}" TextWrapping="Wrap" Margin="0 5 0 0"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="1" Margin="10 0 0 0">
+                    <TextBlock Text="Historial quirúrgico" Foreground="{StaticResource HolderTextColor}" Style="{StaticResource Small_Text}" Margin="0 15 0 0"/>
+                    <TextBlock Text="{Binding MedicalInformation.SurgicalHistory}" Style="{StaticResource Normal_Text}" TextWrapping="Wrap" Margin="0 5 0 0"/>
+
+                    <TextBlock Text="Medicamentos" Foreground="{StaticResource HolderTextColor}" Style="{StaticResource Small_Text}" Margin="0 15 0 0"/>
+                    <TextBlock Text="{Binding MedicalInformation.Medications}" Style="{StaticResource Normal_Text}" TextWrapping="Wrap" Margin="0 5 0 0"/>
+
+                    <Border Background="{StaticResource AccentColor}" Height="1" Margin="0 15 0 0"/>
+
+                    <TextBlock Text="Comentarios médicos" Foreground="{StaticResource HolderTextColor}" Style="{StaticResource Small_Text}" Margin="0 15 0 0"/>
+                    <TextBlock Text="{Binding MedicalInformation.GeneralMedicalComments}" Style="{StaticResource Normal_Text}" TextWrapping="Wrap" Margin="0 5 0 0"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

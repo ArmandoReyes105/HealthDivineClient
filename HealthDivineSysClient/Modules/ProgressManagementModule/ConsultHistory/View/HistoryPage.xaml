@@ -1,0 +1,48 @@
+﻿<Page x:Class="HealthDivineSysClient.Modules.ProgressManagementModule.ConsultHistory.View.HistoryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HealthDivineSysClient.Modules.ProgressManagementModule.ConsultHistory.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="770" d:DesignWidth="1306"
+      Title="HistoryPage">
+
+    <Grid Margin="20" x:Name="Principal_Grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel>
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" VerticalAlignment="Center">
+                <Button Content="&#xf177;" Style="{StaticResource Icon_Button}" VerticalAlignment="Center" />
+                <TextBlock Text="Mis pacientes >> Historial" Style="{StaticResource Normal_Text}" VerticalAlignment="Center" Margin="15 0 0 0"/>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <TextBlock Text="Historial de " Style="{StaticResource Title_Text}"/>
+                <TextBlock Text="paciente" Style="{StaticResource Title_Text}" Foreground="{StaticResource AccentColor}"/>
+            </StackPanel>
+        </DockPanel>
+
+        <Grid Grid.Row="1" HorizontalAlignment="Left" Margin="0 20 0 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Nombre completo paciente" Style="{StaticResource Subtitle_Text}" Margin="0 0 0 15"/>
+
+            <Border Grid.Row="2" Background="{StaticResource HolderTextColor}" Height="1" CornerRadius="1" Margin="1 -1 1 0"/>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <RadioButton Name="Measures_RadioButton" Style="{StaticResource Underline_RadioButton}" Checked="RadioButton_Checked" Content="Medidas" IsChecked="True"/>
+                <RadioButton Name="Composition_RadioButton" Style="{StaticResource Underline_RadioButton}" Checked="RadioButton_Checked" Content="Composición corporal" Margin="20 0"/>
+                <RadioButton Style="{StaticResource Underline_RadioButton}" Checked="RadioButton_Checked" Content="Planes alimenticios" Visibility="Collapsed"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
