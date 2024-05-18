@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="HealthDivineSysClient.View.UserControls.DatePickerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HealthDivineSysClient.View.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="270">
+
+    <UserControl.Resources>
+        <Storyboard x:Key="ShowCalendar_Storyboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Calendar_Viewbox" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2500000" Value="250"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Calendar_Viewbox" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2500000" Value="250"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Calendar_Button" Storyboard.TargetProperty="(ContentControl.Content)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="&#xf271;"/>
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.2500000" Value="&#xf106;"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="CloseCalendar_Storyboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Calendar_Viewbox" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="250"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2500000" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Calendar_Viewbox" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="250"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2500000" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Calendar_Button" Storyboard.TargetProperty="(ContentControl.Content)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="&#xf106;"/>
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.2500000" Value="&#xf271;"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    
+    <Grid Margin="0 5 0 15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBox Name="Date_TextBox" Text="{Binding Text, RelativeSource={RelativeSource AncestorType=UserControl}}" Tag="Ingrese una fecha" IsEnabled="False" Style="{StaticResource Normal_TextBox}" Margin="0" Cursor="IBeam"/>
+        <Button Name="Calendar_Button" Width="40" Content="&#xf271;" HorizontalAlignment="Right" Style="{StaticResource Icon_Button}" Foreground="{StaticResource HolderTextColor}" Click="ShowCalendar"/>
+        <Viewbox Name="Calendar_Viewbox" Grid.Row="1" Width="0" Height="0" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Calendar 
+                Name="Date_Calendar"
+                MouseLeave="HideCalendar"
+                Style="{StaticResource Small_Calendar}" 
+                CalendarItemStyle="{StaticResource Small_CalendarItem}" 
+                CalendarDayButtonStyle="{StaticResource Small_CalendarDayButton}"
+                CalendarButtonStyle="{StaticResource Small_CalendarButton}"
+                SelectedDatesChanged="SetDateText"/>
+        </Viewbox>
+
+    </Grid>
+</UserControl>

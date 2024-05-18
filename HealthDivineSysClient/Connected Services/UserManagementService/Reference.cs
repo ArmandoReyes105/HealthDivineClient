@@ -20,9 +20,13 @@ namespace UserManagementService
         
         private System.DateTime BirthdayField;
         
+        private string GenderField;
+        
         private UserManagementService.GeneralInformation GeneralInfomationField;
         
-        private double HeightField;
+        private UserManagementService.HabitsAndGoals HabitsAndGoalsField;
+        
+        private float HeightField;
         
         private int IdPatientField;
         
@@ -46,6 +50,19 @@ namespace UserManagementService
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Gender
+        {
+            get
+            {
+                return this.GenderField;
+            }
+            set
+            {
+                this.GenderField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public UserManagementService.GeneralInformation GeneralInfomation
         {
             get
@@ -59,7 +76,20 @@ namespace UserManagementService
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Height
+        public UserManagementService.HabitsAndGoals HabitsAndGoals
+        {
+            get
+            {
+                return this.HabitsAndGoalsField;
+            }
+            set
+            {
+                this.HabitsAndGoalsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float Height
         {
             get
             {
@@ -130,26 +160,60 @@ namespace UserManagementService
     public partial class GeneralInformation : object
     {
         
-        private string FoodPreferencesField;
+        private string DietarySupplementsField;
+        
+        private string EatingEmotionalBehaviorField;
+        
+        private string FavoriteFoodsField;
         
         private string GeneralCommentsField;
         
         private int IdGeneralInformationField;
+        
+        private string NonFavoriteFoodsField;
+        
+        private string NutritionalFamiliarityField;
         
         private int PhysicalActivityField;
         
         private string PhysicalActivityCommentsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FoodPreferences
+        public string DietarySupplements
         {
             get
             {
-                return this.FoodPreferencesField;
+                return this.DietarySupplementsField;
             }
             set
             {
-                this.FoodPreferencesField = value;
+                this.DietarySupplementsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EatingEmotionalBehavior
+        {
+            get
+            {
+                return this.EatingEmotionalBehaviorField;
+            }
+            set
+            {
+                this.EatingEmotionalBehaviorField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FavoriteFoods
+        {
+            get
+            {
+                return this.FavoriteFoodsField;
+            }
+            set
+            {
+                this.FavoriteFoodsField = value;
             }
         }
         
@@ -176,6 +240,32 @@ namespace UserManagementService
             set
             {
                 this.IdGeneralInformationField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NonFavoriteFoods
+        {
+            get
+            {
+                return this.NonFavoriteFoodsField;
+            }
+            set
+            {
+                this.NonFavoriteFoodsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NutritionalFamiliarity
+        {
+            get
+            {
+                return this.NutritionalFamiliarityField;
+            }
+            set
+            {
+                this.NutritionalFamiliarityField = value;
             }
         }
         
@@ -208,41 +298,232 @@ namespace UserManagementService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MedicalInformation", Namespace="http://schemas.datacontract.org/2004/07/HealthDiveneSysServer.Entities")]
-    public partial class MedicalInformation : object
+    [System.Runtime.Serialization.DataContractAttribute(Name="HabitsAndGoals", Namespace="http://schemas.datacontract.org/2004/07/HealthDiveneSysServer.Entities")]
+    public partial class HabitsAndGoals : object
     {
         
-        private string AllergiesField;
+        private string AlcoholField;
         
-        private string DiseasesField;
+        private string CaffeineField;
         
-        private int IdMedicalInformationField;
+        private string CigaretteField;
         
-        private string MedicinesField;
+        private string DrugsField;
+        
+        private string ExpectationsField;
+        
+        private string GeneralCommentField;
+        
+        private string HealthGoalsField;
+        
+        private int IdHabitsAndGoalsField;
+        
+        private string SpecificNutritionalGoalsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Allergies
+        public string Alcohol
         {
             get
             {
-                return this.AllergiesField;
+                return this.AlcoholField;
             }
             set
             {
-                this.AllergiesField = value;
+                this.AlcoholField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Diseases
+        public string Caffeine
         {
             get
             {
-                return this.DiseasesField;
+                return this.CaffeineField;
             }
             set
             {
-                this.DiseasesField = value;
+                this.CaffeineField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Cigarette
+        {
+            get
+            {
+                return this.CigaretteField;
+            }
+            set
+            {
+                this.CigaretteField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Drugs
+        {
+            get
+            {
+                return this.DrugsField;
+            }
+            set
+            {
+                this.DrugsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Expectations
+        {
+            get
+            {
+                return this.ExpectationsField;
+            }
+            set
+            {
+                this.ExpectationsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GeneralComment
+        {
+            get
+            {
+                return this.GeneralCommentField;
+            }
+            set
+            {
+                this.GeneralCommentField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HealthGoals
+        {
+            get
+            {
+                return this.HealthGoalsField;
+            }
+            set
+            {
+                this.HealthGoalsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdHabitsAndGoals
+        {
+            get
+            {
+                return this.IdHabitsAndGoalsField;
+            }
+            set
+            {
+                this.IdHabitsAndGoalsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SpecificNutritionalGoals
+        {
+            get
+            {
+                return this.SpecificNutritionalGoalsField;
+            }
+            set
+            {
+                this.SpecificNutritionalGoalsField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MedicalInformation", Namespace="http://schemas.datacontract.org/2004/07/HealthDiveneSysServer.Entities")]
+    public partial class MedicalInformation : object
+    {
+        
+        private string ChronicDiseasesField;
+        
+        private string FoodAllergiesField;
+        
+        private string GastrointestinalDiseasesField;
+        
+        private string GeneralMedicalCommentsField;
+        
+        private string HereditaryFamilyHistoryField;
+        
+        private int IdMedicalInformationField;
+        
+        private string MedicationsField;
+        
+        private string NonFoodAllergiesField;
+        
+        private string SurgicalHistoryField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ChronicDiseases
+        {
+            get
+            {
+                return this.ChronicDiseasesField;
+            }
+            set
+            {
+                this.ChronicDiseasesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FoodAllergies
+        {
+            get
+            {
+                return this.FoodAllergiesField;
+            }
+            set
+            {
+                this.FoodAllergiesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GastrointestinalDiseases
+        {
+            get
+            {
+                return this.GastrointestinalDiseasesField;
+            }
+            set
+            {
+                this.GastrointestinalDiseasesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GeneralMedicalComments
+        {
+            get
+            {
+                return this.GeneralMedicalCommentsField;
+            }
+            set
+            {
+                this.GeneralMedicalCommentsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HereditaryFamilyHistory
+        {
+            get
+            {
+                return this.HereditaryFamilyHistoryField;
+            }
+            set
+            {
+                this.HereditaryFamilyHistoryField = value;
             }
         }
         
@@ -260,15 +541,41 @@ namespace UserManagementService
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Medicines
+        public string Medications
         {
             get
             {
-                return this.MedicinesField;
+                return this.MedicationsField;
             }
             set
             {
-                this.MedicinesField = value;
+                this.MedicationsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NonFoodAllergies
+        {
+            get
+            {
+                return this.NonFoodAllergiesField;
+            }
+            set
+            {
+                this.NonFoodAllergiesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SurgicalHistory
+        {
+            get
+            {
+                return this.SurgicalHistoryField;
+            }
+            set
+            {
+                this.SurgicalHistoryField = value;
             }
         }
     }
@@ -378,8 +685,20 @@ namespace UserManagementService
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UserManagement/AddPatient", ReplyAction="http://tempuri.org/UserManagement/AddPatientResponse")]
         System.Threading.Tasks.Task<int> AddPatientAsync(UserManagementService.Patient patient);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UserManagement/UpdatePatient", ReplyAction="http://tempuri.org/UserManagement/UpdatePatientResponse")]
+        System.Threading.Tasks.Task<int> UpdatePatientAsync(UserManagementService.Patient patient);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UserManagement/UpdateMedicalInformation", ReplyAction="http://tempuri.org/UserManagement/UpdateMedicalInformationResponse")]
+        System.Threading.Tasks.Task<int> UpdateMedicalInformationAsync(UserManagementService.MedicalInformation information);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UserManagement/GetPatient", ReplyAction="http://tempuri.org/UserManagement/GetPatientResponse")]
+        System.Threading.Tasks.Task<UserManagementService.Patient> GetPatientAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UserManagement/GetMyPatients", ReplyAction="http://tempuri.org/UserManagement/GetMyPatientsResponse")]
         System.Threading.Tasks.Task<UserManagementService.Patient[]> GetMyPatientsAsync(int NutritionistId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UserManagement/FilterPatients", ReplyAction="http://tempuri.org/UserManagement/FilterPatientsResponse")]
+        System.Threading.Tasks.Task<UserManagementService.Patient[]> FilterPatientsAsync(int nutritionistId, string filter);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -437,9 +756,29 @@ namespace UserManagementService
             return base.Channel.AddPatientAsync(patient);
         }
         
+        public System.Threading.Tasks.Task<int> UpdatePatientAsync(UserManagementService.Patient patient)
+        {
+            return base.Channel.UpdatePatientAsync(patient);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateMedicalInformationAsync(UserManagementService.MedicalInformation information)
+        {
+            return base.Channel.UpdateMedicalInformationAsync(information);
+        }
+        
+        public System.Threading.Tasks.Task<UserManagementService.Patient> GetPatientAsync(int id)
+        {
+            return base.Channel.GetPatientAsync(id);
+        }
+        
         public System.Threading.Tasks.Task<UserManagementService.Patient[]> GetMyPatientsAsync(int NutritionistId)
         {
             return base.Channel.GetMyPatientsAsync(NutritionistId);
+        }
+        
+        public System.Threading.Tasks.Task<UserManagementService.Patient[]> FilterPatientsAsync(int nutritionistId, string filter)
+        {
+            return base.Channel.FilterPatientsAsync(nutritionistId, filter);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

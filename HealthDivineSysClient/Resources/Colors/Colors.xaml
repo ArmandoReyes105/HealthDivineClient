@@ -2,10 +2,20 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <SolidColorBrush x:Key="BackgroundColor" Color="#15161c"/>
-    <SolidColorBrush x:Key="PrimaryColor" Color="#2b2c31"/>
+    <SolidColorBrush x:Key="PrimaryColor" Color="#191E28"/>
+    <SolidColorBrush x:Key="SecondaryColor" Color="#272E3D"/>
     <SolidColorBrush x:Key="AccentColor" Color="#3BB6B7"/>
+    <SolidColorBrush x:Key="DarkerAccentColor" Color="#FF2F9596"/>
+    
     <SolidColorBrush x:Key="SecondaryTextColor" Color="#080808"/>
     <SolidColorBrush x:Key="PrimaryTextColor" Color="White"/>
-    <SolidColorBrush x:Key="DarkerAccentColor" Color="#FF2F9596"/>
+    <SolidColorBrush x:Key="HolderTextColor" Color="#97A4BF"/>
+    
     <SolidColorBrush x:Key="Red" Color="#FFAB3333"/>
+    <SolidColorBrush x:Key="Gray" Color="#656565"/>
+
+    <Color x:Key="ColorAccent">#3BB6B7</Color>
+    <Color x:Key="ColorGray">#656565</Color>
+    <Color x:Key="ColorSecondary">#272E3D</Color>
+    <Color x:Key="ColorPrimary">#191E28</Color>
 </ResourceDictionary>

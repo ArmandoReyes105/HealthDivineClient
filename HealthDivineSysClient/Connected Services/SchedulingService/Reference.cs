@@ -117,8 +117,14 @@ namespace SchedulingService
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Scheduling/CreateAppointment", ReplyAction="http://tempuri.org/Scheduling/CreateAppointmentResponse")]
         System.Threading.Tasks.Task<int> CreateAppointmentAsync(SchedulingService.Appointment appointment);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Scheduling/GetAppointmentsByNutritionist", ReplyAction="http://tempuri.org/Scheduling/GetAppointmentsByNutritionistResponse")]
-        System.Threading.Tasks.Task<SchedulingService.Appointment[]> GetAppointmentsByNutritionistAsync(int nutritionistId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Scheduling/DeleteAppointment", ReplyAction="http://tempuri.org/Scheduling/DeleteAppointmentResponse")]
+        System.Threading.Tasks.Task<int> DeleteAppointmentAsync(int appointmentId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Scheduling/UpdateAppointment", ReplyAction="http://tempuri.org/Scheduling/UpdateAppointmentResponse")]
+        System.Threading.Tasks.Task<int> UpdateAppointmentAsync(SchedulingService.Appointment appointment);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Scheduling/GetAppointmentsByMonth", ReplyAction="http://tempuri.org/Scheduling/GetAppointmentsByMonthResponse")]
+        System.Threading.Tasks.Task<SchedulingService.Appointment[]> GetAppointmentsByMonthAsync(int nutritionistId, int month, int year);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Scheduling/GetAppointmentsByDay", ReplyAction="http://tempuri.org/Scheduling/GetAppointmentsByDayResponse")]
         System.Threading.Tasks.Task<SchedulingService.Appointment[]> GetAppointmentsByDayAsync(System.DateTime day, int nutritionistId);
@@ -179,9 +185,19 @@ namespace SchedulingService
             return base.Channel.CreateAppointmentAsync(appointment);
         }
         
-        public System.Threading.Tasks.Task<SchedulingService.Appointment[]> GetAppointmentsByNutritionistAsync(int nutritionistId)
+        public System.Threading.Tasks.Task<int> DeleteAppointmentAsync(int appointmentId)
         {
-            return base.Channel.GetAppointmentsByNutritionistAsync(nutritionistId);
+            return base.Channel.DeleteAppointmentAsync(appointmentId);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateAppointmentAsync(SchedulingService.Appointment appointment)
+        {
+            return base.Channel.UpdateAppointmentAsync(appointment);
+        }
+        
+        public System.Threading.Tasks.Task<SchedulingService.Appointment[]> GetAppointmentsByMonthAsync(int nutritionistId, int month, int year)
+        {
+            return base.Channel.GetAppointmentsByMonthAsync(nutritionistId, month, year);
         }
         
         public System.Threading.Tasks.Task<SchedulingService.Appointment[]> GetAppointmentsByDayAsync(System.DateTime day, int nutritionistId)

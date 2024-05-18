@@ -1,0 +1,51 @@
+﻿<Window x:Class="HealthDivineSysClient.View.Dialogs.Dialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HealthDivineSysClient.View.Dialogs"
+        mc:Ignorable="d"
+        Title="Dialog"
+        Width="500"
+        MaxHeight="300"
+        Background="Transparent"
+        WindowStyle="None"
+        AllowsTransparency="True">
+
+    <Window.Resources>
+        <Storyboard x:Key="Start_StoryBoard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Principal_Grid" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.3000000" Value="450"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Close_StoryBoard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Principal_Grid" Storyboard.TargetProperty="(FrameworkElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid Margin="20" Width="450" VerticalAlignment="Top" Name="Principal_Grid">
+            <Border Background="{StaticResource PrimaryColor}" CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5"
+                          Color="Black"
+                          Opacity="0.75"
+                          BlurRadius="5"/>
+                </Border.Effect>
+            </Border>
+            <StackPanel Margin="20">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xf05a;" Style="{StaticResource Solid_Icon}" Foreground="#CB9335"/>
+                    <TextBlock Name="Title_TextBlock" Text="Title of the alert" Style="{StaticResource Subtitle_Text}" Margin="15 0" VerticalAlignment="Center"/>
+                </StackPanel>
+                <TextBlock Name="Message_TextBlock" Text="Here is the message of the alert, is a description of what is happening" Margin="0 10 0 0" TextWrapping="Wrap" Style="{StaticResource Normal_Text}" Foreground="{StaticResource HolderTextColor}"/>
+                <Button Style="{StaticResource Icon_Button}" FontFamily="{StaticResource Comfortaa-Bold}" FontSize="14" Content="Aceptar"  HorizontalAlignment="Right" Click="YesButton_Click" />
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>

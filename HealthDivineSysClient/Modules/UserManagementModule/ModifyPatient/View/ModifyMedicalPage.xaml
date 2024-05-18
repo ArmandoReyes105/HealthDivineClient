@@ -1,0 +1,113 @@
+﻿<Page x:Class="HealthDivineSysClient.Modules.UserManagementModule.ModifyPatient.View.ModifyMedicalPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HealthDivineSysClient.Modules.UserManagementModule.ModifyPatient.View"
+      xmlns:Controls="clr-namespace:HealthDivineSysClient.View.UserControls"
+      mc:Ignorable="d" 
+      d:DesignHeight="770" d:DesignWidth="1306"
+      Title="ModifyMedicalPage">
+
+    <Grid Name="Main_Grid" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Header-->
+        <StackPanel Orientation="Horizontal">
+            <Button Content="&#xf177;" Style="{StaticResource Icon_Button}" VerticalAlignment="Center" Margin="0 0 15 0" Command="{Binding ReturnCommand}"/>
+            <TextBlock Text="Mis pacientes >> Modificar información >> Historial médico" Style="{StaticResource Normal_Text}" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock Text="Actualizar " Style="{StaticResource Title_Text}"/>
+            <TextBlock Text="Información" Style="{StaticResource Title_Text}" Foreground="{StaticResource AccentColor}"/>
+        </StackPanel>
+
+        <!--Content-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Progress Bar-->
+            <StackPanel Margin="0 20 0 0">
+                <Controls:ProgressCircleControl x:Name="Medical_ProgressControl" Icon="&#xf477;"  Text="Historial médico" LineVisibility="Collapsed"/>
+            </StackPanel>
+
+            <!--Form-->
+            <Grid Name="Form_Grid" Grid.Column="1" Margin="40 20 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+
+                <TextBlock Name="Header_TextBlock" Text="Historial médico" Style="{StaticResource Title_Text}"/>
+
+                <!--Medical Form-->
+                <ScrollViewer Name="Medical_Panel" Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" MinWidth="200"/>
+                            <ColumnDefinition Width="*" MinWidth="200"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Margin="0 20 15 0">
+                            <Controls:DividerControl DividerText="Enfermedades"/>
+                            <TextBlock Text="Enfermedades crónicas" Style="{StaticResource Small_Text}"/>
+                            <TextBox Text="{Binding ChronicalDiseases, UpdateSourceTrigger=PropertyChanged}" Tag="¿Que enfermedades presenta?" 
+                                     Style="{StaticResource Normal_TextBox}" TextWrapping="Wrap"/>
+                            <TextBlock Text="Antecedentes heredo-familiares" Style="{StaticResource Small_Text}"/>
+                            <TextBox Text="{Binding HereditaryFamilyHistory, UpdateSourceTrigger=PropertyChanged}" Tag="¿Enfermedades en su familia?" 
+                                     Style="{StaticResource Normal_TextBox}" TextWrapping="Wrap"/>
+                            <TextBlock Text="Enfermedades gastrointestinales" Style="{StaticResource Small_Text}"/>
+                            <TextBox Text="{Binding GastrointestinalDiseases, UpdateSourceTrigger=PropertyChanged}" Tag="¿Malestar estomacal?" 
+                                     Style="{StaticResource Normal_TextBox}" TextWrapping="Wrap"/>
+                            <Controls:DividerControl DividerText="Alergias" Cursor=""/>
+                            <TextBlock Text="Alergias alimenticias" Style="{StaticResource Small_Text}"/>
+                            <TextBox Text="{Binding FoodAllergies, UpdateSourceTrigger=PropertyChanged}" Tag="¿Alergia a algún alimento?" 
+                                     Style="{StaticResource Normal_TextBox}" TextWrapping="Wrap"/>
+                            <TextBlock Text="Alergias no alimenticias" Style="{StaticResource Small_Text}"/>
+                            <TextBox Text="{Binding NonFoodAllergies, UpdateSourceTrigger=PropertyChanged}" Tag="¿Alergia a algún medicamento, producto, etc?" 
+         Style="{StaticResource Normal_TextBox}" TextWrapping="Wrap"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Margin="15 20 0 0">
+                            <Controls:DividerControl DividerText="Historial médico"/>
+                            <TextBlock Text="Historial quirúrgico" Style="{StaticResource Small_Text}"/>
+                            <TextBox Text="{Binding SurgicalHistory, UpdateSourceTrigger=PropertyChanged}" Tag="¿Le han operado?" 
+                                     Style="{StaticResource Normal_TextBox}" TextWrapping="Wrap"/>
+                            <TextBlock Text="Medicamentos" Style="{StaticResource Small_Text}"/>
+                            <TextBox Text="{Binding Medications, UpdateSourceTrigger=PropertyChanged}" Tag="¿Toma algún medicamento?" 
+         Style="{StaticResource Normal_TextBox}" TextWrapping="Wrap"/>
+                            <Controls:DividerControl DividerText="Comentarios"/>
+                            <TextBlock Text="Comentarios médicos generales" Style="{StaticResource Small_Text}"/>
+                            <TextBox Text="{Binding GeneralMedicalComments, UpdateSourceTrigger=PropertyChanged}" Tag="¿Algo que considere relevante?" 
+Style="{StaticResource Normal_TextBox}" TextWrapping="Wrap"/>
+                            <Border BorderBrush="{StaticResource PrimaryTextColor}" CornerRadius="5" BorderThickness="1">
+                                <Grid Margin="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="&#xf05a;" FontFamily="{StaticResource FontAwesomeSolid}" Foreground="{StaticResource PrimaryTextColor}" FontSize="24"/>
+                                    <Grid Grid.Column="1" Margin="15 0 0 0">
+                                        <TextBlock Text="Los campos de información médica no son obligatorios, sin embargo, es FUNDAMENTAL rellenarla si es necesario, por el bien y salud de su paciente" Style="{StaticResource Small_Text}" TextWrapping="Wrap"/>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+
+                <Border Name="Animation_Border" Background="{StaticResource BackgroundColor}" Grid.RowSpan="2" VerticalAlignment="Top"/>
+                <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
+                    <Button  Width="200" Content="Actualizar"  Style="{StaticResource Normal_Button}" Command="{Binding UpdateInfo}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

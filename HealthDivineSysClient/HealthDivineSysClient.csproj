@@ -12,14 +12,24 @@
     <None Remove="Resources\Fonts\Comfortaa-Regular.ttf" />
     <None Remove="Resources\Fonts\Font Awesome 6 Regular.otf" />
     <None Remove="Resources\Fonts\Font Awesome 6.otf" />
+    <None Remove="Resources\Images\Animation.json" />
+    <None Remove="Resources\Images\Antebrazo_Image.png" />
+    <None Remove="Resources\Images\Brazo_Image.png" />
+    <None Remove="Resources\Images\Cadera_Image.png" />
+    <None Remove="Resources\Images\Cintura_Image.png" />
     <None Remove="Resources\Images\FemaleUser_Image.png" />
+    <None Remove="Resources\Images\Loading_Animation.json" />
+    <None Remove="Resources\Images\MaleUser_Image.png" />
+    <None Remove="Resources\Images\Muslo_Image.png" />
+    <None Remove="Resources\Images\Pantorrilla_Image.png" />
+    <None Remove="Resources\Images\Pecho_Image.png" />
+    <None Remove="Resources\Images\Search_Animation.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="iTextSharp" Version="5.5.13.3" />
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+    <PackageReference Include="LottieSharp" Version="2.3.0" />
     <PackageReference Include="System.ServiceModel.Duplex" Version="4.10.*" />
     <PackageReference Include="System.ServiceModel.Federation" Version="4.10.*" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.10.*" />
@@ -40,8 +50,41 @@
     <Resource Include="Resources\Fonts\Font Awesome 6.otf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Images\Animation.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Antebrazo_Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Brazo_Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Cadera_Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Cintura_Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Loading_Animation.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Images\FemaleUser_Image.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\MaleUser_Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Muslo_Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Pantorrilla_Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Pecho_Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Search_Animation.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
 

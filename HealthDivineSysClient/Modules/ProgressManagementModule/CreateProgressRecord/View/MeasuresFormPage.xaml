@@ -1,0 +1,163 @@
+﻿<Page x:Class="HealthDivineSysClient.Modules.ProgressManagementModule.CreateProgressRecord.View.MeasuresFormPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HealthDivineSysClient.Modules.ProgressManagementModule.CreateProgressRecord.View"
+      xmlns:Controls="clr-namespace:HealthDivineSysClient.View.UserControls"
+      mc:Ignorable="d" 
+      d:DesignHeight="770" d:DesignWidth="1306"
+      Title="MeasuresFormPage">
+
+    <Grid Name="Main_Grid" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!--Header-->
+        <DockPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Button Content="&#xf177;" Style="{StaticResource Icon_Button}" VerticalAlignment="Center" Command="{Binding ReturnCommand}"/>
+                <TextBlock Text="Registro de progreso >> Medidas y composición" Style="{StaticResource Normal_Text}" Margin="15 0 0 0" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <TextBlock Text="Crear " Style="{StaticResource Title_Text}" VerticalAlignment="Center"/>
+                <TextBlock Text="Registro" Style="{StaticResource Title_Text}" Foreground="{StaticResource AccentColor}" VerticalAlignment="Center"/>
+            </StackPanel>
+        </DockPanel>
+
+        <!--Content-->
+        <Grid Grid.Row="1" Margin="0 20 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel>
+                <Controls:ProgressCircleControl x:Name="Diagnosis_Control" Text="Diagnostico" Icon="&#xf7f5;"/>
+                <Controls:ProgressCircleControl x:Name="Measures_Control" Text="Medidas y Composición" Icon="&#xf496;" LineVisibility="Collapsed"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Margin="20 0 10 0">
+                <Controls:DividerControl DividerText="Composición corporal"/>
+                <TextBlock Text="Peso total" Style="{StaticResource Small_Text}"/>
+                <TextBox Text="{Binding BodyCompositions.TotalWeight, Mode=TwoWay}" Style="{StaticResource Normal_TextBox}" Tag="0.0 kg"  Width="100" HorizontalAlignment="Left" 
+                         CommandManager.PreviewExecuted="ValidateNoPaste"
+PreviewTextInput="ValidateOnlyNumbers" 
+PreviewKeyDown="ValidateNoBlanckSpace"
+                         MaxLength="5"/>
+
+                <TextBlock Text="Porcentaje de musculo" Style="{StaticResource Small_Text}"/>
+                <TextBox Text="{Binding BodyCompositions.MusclePercentage}" Style="{StaticResource Normal_TextBox}" Tag="0.0 %"  Width="100" HorizontalAlignment="Left"
+                         CommandManager.PreviewExecuted="ValidateNoPaste"
+PreviewTextInput="ValidateOnlyNumbers" 
+PreviewKeyDown="ValidateNoBlanckSpace"
+                         MaxLength="5"/>
+
+                <TextBlock Text="Porcentaje de grasa" Style="{StaticResource Small_Text}"/>
+                <TextBox Text="{Binding BodyCompositions.FatPercentage}" Style="{StaticResource Normal_TextBox}" Tag="0.0 %"  Width="100" HorizontalAlignment="Left"
+                         CommandManager.PreviewExecuted="ValidateNoPaste"
+PreviewTextInput="ValidateOnlyNumbers" 
+PreviewKeyDown="ValidateNoBlanckSpace"
+                         MaxLength="5"/>
+
+                <TextBlock Text="Porcentaje de agua" Style="{StaticResource Small_Text}"/>
+                <TextBox Text="{Binding BodyCompositions.WaterPercentage}" Style="{StaticResource Normal_TextBox}" Tag="0.0 %"  Width="100" HorizontalAlignment="Left"
+                         CommandManager.PreviewExecuted="ValidateNoPaste"
+PreviewTextInput="ValidateOnlyNumbers" 
+PreviewKeyDown="ValidateNoBlanckSpace"
+                         MaxLength="5"/>
+
+                <TextBlock Text="Grasa visceral" Style="{StaticResource Small_Text}"/>
+                <TextBox Text="{Binding BodyCompositions.VisceralFat}" Style="{StaticResource Normal_TextBox}" Tag="0.0 %" Width="100" HorizontalAlignment="Left"
+                         CommandManager.PreviewExecuted="ValidateNoPaste"
+PreviewTextInput="ValidateOnlyNumbers" 
+PreviewKeyDown="ValidateNoBlanckSpace"
+                         MaxLength="5"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Margin="10 0 10 0">
+                <Controls:DividerControl DividerText="Medidas" Cursor=""/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel>
+                        <TextBlock Text="Pecho" Style="{StaticResource Small_Text}"/>
+                        <TextBox Name="Chest_TextBox" Text="{Binding Measure.Chest}" Style="{StaticResource Normal_TextBox}" Tag="0.0 cm" Width="100" HorizontalAlignment="Left" GotFocus="TextBox_GotFocus"
+                                 CommandManager.PreviewExecuted="ValidateNoPaste"
+                                    PreviewTextInput="ValidateOnlyNumbers" 
+                                    PreviewKeyDown="ValidateNoBlanckSpace"
+                                 MaxLength="5"/>
+
+                        <TextBlock Text="Antebrazo" Style="{StaticResource Small_Text}"/>
+                        <TextBox Name="Antebrazo_TextBox" Text="{Binding Measure.Forearm}" Style="{StaticResource Normal_TextBox}" Tag="0.0 cm" Width="100" HorizontalAlignment="Left" GotFocus="TextBox_GotFocus"
+                                 CommandManager.PreviewExecuted="ValidateNoPaste"
+PreviewTextInput="ValidateOnlyNumbers" 
+PreviewKeyDown="ValidateNoBlanckSpace"
+                                 MaxLength="5"/>
+
+                        <TextBlock Text="Brazo contraido" Style="{StaticResource Small_Text}"/>
+                        <TextBox Name="BrazoContraido_TextBox" Text="{Binding Measure.ContractedArm}" Style="{StaticResource Normal_TextBox}" Tag="0.0 cm" Width="100" HorizontalAlignment="Left" GotFocus="TextBox_GotFocus"
+                                 CommandManager.PreviewExecuted="ValidateNoPaste"
+PreviewTextInput="ValidateOnlyNumbers" 
+PreviewKeyDown="ValidateNoBlanckSpace"
+                                 MaxLength="5"/>
+
+                        <TextBlock Text="Brazo relajado" Style="{StaticResource Small_Text}"/>
+                        <TextBox Name="BrazoRelajado_TextBox" Text="{Binding Measure.Arm}" Style="{StaticResource Normal_TextBox}" Tag="0.0 cm" Width="100" HorizontalAlignment="Left" GotFocus="TextBox_GotFocus"
+                                 CommandManager.PreviewExecuted="ValidateNoPaste"
+PreviewTextInput="ValidateOnlyNumbers" 
+PreviewKeyDown="ValidateNoBlanckSpace"
+                                 MaxLength="5"/>
+                    </StackPanel>
+                    
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="Cintura" Style="{StaticResource Small_Text}"/>
+                        <TextBox Name="Cintura_TextBox" Text="{Binding Measure.Waist}" Style="{StaticResource Normal_TextBox}" Tag="0.0 cm" Width="100" HorizontalAlignment="Left" GotFocus="TextBox_GotFocus"
+                                 CommandManager.PreviewExecuted="ValidateNoPaste"
+PreviewTextInput="ValidateOnlyNumbers" 
+PreviewKeyDown="ValidateNoBlanckSpace"
+                                 MaxLength="5"/>
+
+                        <TextBlock Text="Cadera" Style="{StaticResource Small_Text}"/>
+                        <TextBox Name="Cadera_TextBox" Text="{Binding Measure.Hip}" Style="{StaticResource Normal_TextBox}" Tag="0.0 cm" Width="100" HorizontalAlignment="Left" GotFocus="TextBox_GotFocus"
+                                 CommandManager.PreviewExecuted="ValidateNoPaste"
+PreviewTextInput="ValidateOnlyNumbers" 
+PreviewKeyDown="ValidateNoBlanckSpace"
+                                 MaxLength="5"/>
+
+                        <TextBlock Text="Muslo" Style="{StaticResource Small_Text}"/> 
+                        <TextBox Name="Muslo_TextBox" Text="{Binding Measure.Thigh}" Style="{StaticResource Normal_TextBox}" Tag="0.0 cm" Width="100" HorizontalAlignment="Left" GotFocus="TextBox_GotFocus"
+                                 CommandManager.PreviewExecuted="ValidateNoPaste"
+PreviewTextInput="ValidateOnlyNumbers" 
+PreviewKeyDown="ValidateNoBlanckSpace"
+                                 MaxLength="5"/>
+
+                        <TextBlock Text="Pantorilla" Style="{StaticResource Small_Text}"/>
+                        <TextBox Name="Pantorilla_TextBox" Text="{Binding Measure.Calf}" Style="{StaticResource Normal_TextBox}" Tag="0.0 cm" Width="100" HorizontalAlignment="Left" GotFocus="TextBox_GotFocus"
+                                 CommandManager.PreviewExecuted="ValidateNoPaste"
+PreviewTextInput="ValidateOnlyNumbers" 
+PreviewKeyDown="ValidateNoBlanckSpace"
+                                 MaxLength="5"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+            <Viewbox Grid.Column="3">
+                <Image Name="Body_Image" Source="/Resources/Images/Pecho_Image.png"/>
+            </Viewbox>
+        </Grid>
+
+        <!--Buttons-->
+        <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button Content="Siguiente" Style="{StaticResource Normal_Button}" Width="150" Margin="15 0 0 0" Command="{Binding SaveRecordCommand}"/>
+        </StackPanel>
+    </Grid>
+</Page>

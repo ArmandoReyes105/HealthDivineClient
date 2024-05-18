@@ -3,19 +3,44 @@
 
     <Style x:Key="Title_Text" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="{StaticResource Comfortaa-Regular}"/>
-        <Setter Property="FontSize" Value="40"/>
+        <Setter Property="FontSize" Value="26"/>
         <Setter Property="Foreground" Value="White"/>
-    </Style>
-
-    <Style x:Key="Normal_Text" TargetType="TextBlock">
-        <Setter Property="FontFamily" Value="{StaticResource Comfortaa-Regular}"/>
-        <Setter Property="FontSize" Value="16"/>
-        <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}"/>
     </Style>
 
     <Style x:Key="Subtitle_Text" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="{StaticResource Comfortaa-Bold}"/>
-        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}"/>
+    </Style>
+
+    <Style x:Key="Normal_Text" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource Comfortaa-Regular}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}"/>
+    </Style>
+
+    <Style x:Key="Small_Text" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource Comfortaa-Regular}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}"/>
+    </Style>
+
+    <Style x:Key="SuperSmall_Text" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource Comfortaa-Regular}"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}"/>
+    </Style>
+    
+    <!--Icons-->
+    <Style x:Key="Solid_Icon" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource FontAwesomeSolid}"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}"/>
+    </Style>
+
+    <Style x:Key="Regular_Icon" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource FontAwesomeRegular}"/>
+        <Setter Property="FontSize" Value="24"/>
         <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}"/>
     </Style>
 

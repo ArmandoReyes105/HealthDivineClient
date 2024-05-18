@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HealthDivineSysClient"
+        xmlns:Dialogs="clr-namespace:HealthDivineSysClient.View.Dialogs"
         mc:Ignorable="d"
         Title="Health Divine" Height="770" Width="1370"
         WindowStartupLocation="CenterScreen"
@@ -17,12 +18,19 @@
 
         <!--SideBar-->
         <Grid Width="64">
-            <Border Background="{StaticResource PrimaryColor}" CornerRadius="0 20 20 0"/>
+            <Border Background="{StaticResource PrimaryColor}"/>
+            <StackPanel>
+                <Button Name="Patients_Button" Style="{StaticResource Icon_Button}" Content="&#xf2bd;" FontFamily="{StaticResource FontAwesomeRegular}" Margin="0 20 0 0" Click="ChangeView"/>
+                <Button Name="Calendar_Button" Style="{StaticResource Icon_Button}" Content="&#xf133;" FontFamily="{StaticResource FontAwesomeRegular}" Margin="0 20" Click="ChangeView"/>
+            </StackPanel>
         </Grid>
         
         <!--Content-->
         <Frame Name="Frame_Main" Grid.Column="1" Style="{StaticResource Frame}">
             
         </Frame>
+
+        <Grid Grid.Column="1" Background="#60000000" Opacity="0" Name="Opacity_Grid" Visibility="Collapsed"/>
+
     </Grid>
 </Window>

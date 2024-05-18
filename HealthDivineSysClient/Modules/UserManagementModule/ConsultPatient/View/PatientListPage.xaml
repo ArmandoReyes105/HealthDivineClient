@@ -1,0 +1,105 @@
+﻿<Page x:Class="HealthDivineSysClient.Modules.UserManagementModule.ConsultPatient.View.PatientListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HealthDivineSysClient.Modules.UserManagementModule.ConsultPatient.View"
+      xmlns:Controls="clr-namespace:HealthDivineSysClient.View.UserControls"
+      xmlns:ViewModel="clr-namespace:HealthDivineSysClient.Modules.UserManagementModule.ConsultPatient.ViewModel"
+      xmlns:Lottie="clr-namespace:LottieSharp.WPF;assembly=LottieSharp"
+      mc:Ignorable="d" 
+      d:DesignHeight="770" d:DesignWidth="1306"
+      Title="PatientListPage">
+
+    <Page.DataContext>
+        <ViewModel:PatientListViewModel/>
+    </Page.DataContext>
+    
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Header-->
+        <DockPanel Margin="0 0 0 20">
+            <TextBlock Text="Mis pacientes" Style="{StaticResource Normal_Text}" VerticalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Mis " Style="{StaticResource Title_Text}"/>
+                <TextBlock Text="Pacientes" Style="{StaticResource Title_Text}" Foreground="{StaticResource AccentColor}"/>
+            </StackPanel>
+        </DockPanel>
+        
+        <!--List-->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <DockPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding ShownPatients}" Style="{StaticResource Normal_Text}"/>
+                    <TextBlock Text=" de " Style="{StaticResource Normal_Text}" Foreground="{StaticResource HolderTextColor}"/>
+                    <TextBlock Text="{Binding TotalPatients}" Style="{StaticResource Normal_Text}"/>
+                    <TextBlock Text=" Pacientes" Style="{StaticResource Normal_Text}" Foreground="{StaticResource HolderTextColor}"/>
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource Search_TextBox}" Margin="15 0" Width="350" Tag="Buscar paciente . . ."/>
+                    <Button Content="+ Nuevo paciente" Width="200" Style="{StaticResource Normal_Button}" Command="{Binding AddPatientCommand}"/>
+                </StackPanel>
+            </DockPanel>
+
+            <!--List panel-->
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0 20 0 0" Visibility="{Binding ListVisibility}">
+                <ItemsControl ItemsSource="{Binding Patients}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Controls:PatientCardControl DataContext="{Binding}"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+            
+            <!--Loading panel-->
+            <Grid Grid.Row="1" Visibility="{Binding LoadingVisibility}">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Lottie:LottieAnimationView Width="200" Height="200"
+                                                AutoPlay="True"
+                                                ResourcePath="pack://application:,,,/Resources/Images/Loading_Animation.json"
+                                                RepeatCount="-1"/>
+                    <TextBlock Text="Cargando pacientes ..." Style="{StaticResource Normal_Text}" HorizontalAlignment="Center" Margin="0 10"/>
+                </StackPanel>
+            </Grid>
+
+            <!--Error panel-->
+            <Grid Grid.Row="1" Visibility="{Binding ErrorVisibility}">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Lottie:LottieAnimationView Width="200" Height="200"
+                                     AutoPlay="True"
+                                     ResourcePath="pack://application:,,,/Resources/Images/Animation.json"
+                                     RepeatCount="-1"/>
+                    <TextBlock Text="{Binding Message}" Style="{StaticResource Normal_Text}" HorizontalAlignment="Center" Margin="0 10" MaxWidth="500" TextWrapping="Wrap" TextAlignment="Center"/>
+                    <Button Content="&#xf021;" Style="{StaticResource Icon_Button}" HorizontalAlignment="Center" Command="{Binding TryAgainCommand}"/>
+                </StackPanel>
+            </Grid>
+
+            <!--No results panel-->
+            <Grid Grid.Row="1" Visibility="{Binding EmptyVisibility}">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Lottie:LottieAnimationView Width="150" Height="150" Opacity=".5"
+                         AutoPlay="True"
+                         ResourcePath="pack://application:,,,/Resources/Images/Search_Animation.json"
+                         RepeatCount="-1"/>
+                    <TextBlock Text="{Binding Message}" Style="{StaticResource Normal_Text}" HorizontalAlignment="Center" Margin="0 10" MaxWidth="550" TextWrapping="Wrap" TextAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

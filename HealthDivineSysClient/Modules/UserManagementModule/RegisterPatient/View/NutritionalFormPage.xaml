@@ -1,0 +1,115 @@
+﻿<Page x:Class="HealthDivineSysClient.Modules.UserManagementModule.RegisterPatient.View.NutritionalFormPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Controls="clr-namespace:HealthDivineSysClient.View.UserControls"
+      xmlns:local="clr-namespace:HealthDivineSysClient.Modules.UserManagementModule.RegisterPatient.View"
+      xmlns:ViewModel="clr-namespace:HealthDivineSysClient.Modules.UserManagementModule.RegisterPatient.ViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="770" d:DesignWidth="1306"
+      Title="NutritionalFormPage">
+
+    <Page.DataContext>
+        <ViewModel:NutritionalFormViewModel/>
+    </Page.DataContext>
+    
+    <Grid Name="Main_Grid" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Header-->
+        <StackPanel Orientation="Horizontal">
+            <Button Content="&#xf177;" Style="{StaticResource Icon_Button}" VerticalAlignment="Center" Margin="0 0 15 0" Command="{Binding CancelCommand}"/>
+            <TextBlock Text="Mis pacientes >> Dar de alta paciente >> Historial nutricional" Style="{StaticResource Normal_Text}" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock Text="Dar de " Style="{StaticResource Title_Text}"/>
+            <TextBlock Text="alta" Style="{StaticResource Title_Text}" Foreground="{StaticResource AccentColor}"/>
+        </StackPanel>
+
+        <!--Content-->
+        <Grid Grid.Row="1" Cursor="">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Progress Bar-->
+            <StackPanel Margin="0 20 0 0">
+                <Controls:ProgressCircleControl x:Name="Personal_ProgressControl" Icon="&#xf2bd;" Text="Información personal"/>
+                <Controls:ProgressCircleControl x:Name="Medical_ProgressControl" Icon="&#xf477;"  Text="Historial médico"/>
+                <Controls:ProgressCircleControl x:Name="Nutritional_ProgressControl" Icon="&#xf06c;"  Text="Historial nutricional"/>
+                <Controls:ProgressCircleControl x:Name="Objectives_ProgressControl" Icon="&#xf091;" LineVisibility="Hidden" Text="Objetivos y Hábitos"/>
+            </StackPanel>
+
+            <!--Form-->
+            <Grid Name="Form_Grid" Grid.Column="1" Margin="40 20 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+
+                <TextBlock Name="Header_TextBlock" Text="Historial nutricional" Style="{StaticResource Title_Text}"/>
+
+                <!--Medical Form-->
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" MinWidth="200"/>
+                            <ColumnDefinition Width="*" MinWidth="200"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Margin="0 20 15 0">
+                            <Controls:DividerControl DividerText="Actividad física"/>
+                            <TextBlock Text="Nivel de actividad física" Style="{StaticResource Small_Text}"><Run Text=" *" Foreground="Red"/></TextBlock>
+                            <WrapPanel Margin="0 5 0 15">
+                                <RadioButton Style="{StaticResource BigIcon_RadioButton}" Command="{Binding ChangeActivityLevelCommand}" CommandParameter="1"  Content="Sedentario" Tag="&#xf183;"/>
+                                <RadioButton Style="{StaticResource BigIcon_RadioButton}" Command="{Binding ChangeActivityLevelCommand}" CommandParameter="2" Content="Ligero" Margin="10 0" Tag="&#xf554;"/>
+                                <RadioButton Style="{StaticResource BigIcon_RadioButton}" Command="{Binding ChangeActivityLevelCommand}" CommandParameter="3" Content="Moderado" IsChecked="True" Tag="&#xf70c;"/>
+                                <RadioButton Style="{StaticResource BigIcon_RadioButton}" Command="{Binding ChangeActivityLevelCommand}" CommandParameter="4" Content="Muy activo" Margin="10 0" Tag="&#xf7c9;"/>
+                            </WrapPanel>
+                            
+                            <TextBlock Text="Actividad física" Style="{StaticResource Small_Text}"><Run Text=" *" Foreground="Red"/></TextBlock>
+                            <TextBox Text="{Binding PhysicalActivityComment, UpdateSourceTrigger=PropertyChanged}" Tag="¿Cómo es su actividad física?" Style="{StaticResource Normal_TextBox}" TextWrapping="Wrap"/>
+
+                            <Controls:DividerControl DividerText="Alimentación"/>
+                            <TextBlock Text="Alimentos preferidos" Style="{StaticResource Small_Text}"><Run Text=" *" Foreground="Red"/></TextBlock>
+                            <TextBox Text="{Binding FavoriteFoods, UpdateSourceTrigger=PropertyChanged}" Tag="¿Qué alimentos le gustan?" Style="{StaticResource Normal_TextBox}" TextWrapping="Wrap"/>
+
+                            <TextBlock Text="Alimentos NO preferidos" Style="{StaticResource Small_Text}"><Run Text=" *" Foreground="Red"/></TextBlock>
+                            <TextBox Text="{Binding NonFavoriteFoods, UpdateSourceTrigger=PropertyChanged}" Tag="¿Qué alimentos NO le gustan?" Style="{StaticResource Normal_TextBox}" TextWrapping="Wrap"/>
+                            
+                            <TextBlock Text="Suplementos alimenticios" Style="{StaticResource Small_Text}"/>
+                            <TextBox Text="{Binding DietarySupplements, UpdateSourceTrigger=PropertyChanged}" Tag="¿Toma algún suplemento?" Style="{StaticResource Normal_TextBox}" TextWrapping="Wrap"/>
+                        </StackPanel>
+                        
+                        <StackPanel Grid.Column="1" Margin="15 20 0 0">
+                            <Controls:DividerControl DividerText="Experiencias"/>
+                            <TextBlock Text="Familiaridad nutricional" Style="{StaticResource Small_Text}"><Run Text=" *" Foreground="Red"/></TextBlock>
+                            <TextBox Text="{Binding NutritionalFamiliarity, UpdateSourceTrigger=PropertyChanged}" Tag="¿Ha ido alguna vez al nutricionista?¿Cómo fue?" Style="{StaticResource Normal_TextBox}" TextWrapping="Wrap"/>
+
+                            <TextBlock Text="Comportamiento alimenticio emocional" Style="{StaticResource Small_Text}"><Run Text=" *" Foreground="Red"/></TextBlock>
+                            <TextBox Text="{Binding FoodEmotionalBehavior, UpdateSourceTrigger=PropertyChanged}" Tag="¿Cómo es su relación con la comida?" Style="{StaticResource Normal_TextBox}" TextWrapping="Wrap"/>
+                            
+                            <Controls:DividerControl DividerText="Comentarios"/>
+                            <TextBlock Text="Comentarios nutricionales generales" Style="{StaticResource Small_Text}"/>
+                            <TextBox Text="{Binding GeneralComments, UpdateSourceTrigger=PropertyChanged}" Tag="¿Algo que considere relevante" Style="{StaticResource Normal_TextBox}" TextWrapping="Wrap"/>
+
+                            <TextBlock Text="* Indica campos obligatorios" Style="{StaticResource Small_Text}" HorizontalAlignment="Right"><Run Text=" *" Foreground="Red"/></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+
+                <Border Name="Animation_Border" Background="{StaticResource BackgroundColor}" Grid.RowSpan="2" VerticalAlignment="Top"/>
+                <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
+                    <Button  Width="200" Content="Siguiente"  Style="{StaticResource Normal_Button}" Command="{Binding NextCommand}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
