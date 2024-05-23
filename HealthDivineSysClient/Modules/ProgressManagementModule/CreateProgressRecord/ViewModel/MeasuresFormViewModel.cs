@@ -1,10 +1,12 @@
 ﻿using HealthDivineSysClient.Helpers;
+using HealthDivineSysClient.Modules.ProgressManagementModule.CreateProgressRecord.Data;
 using HealthDivineSysClient.Modules.UserManagementModule.ConsultPatient.View;
 using HealthDivineSysClient.ViewModel.ViewModelTemplates;
 using ProgressManagementService;
 using SchedulingService;
 using System;
 using System.Diagnostics;
+using System.ServiceModel;
 using System.Windows.Input;
 
 namespace HealthDivineSysClient.Modules.ProgressManagementModule.CreateProgressRecord.ViewModel
@@ -58,14 +60,35 @@ namespace HealthDivineSysClient.Modules.ProgressManagementModule.CreateProgressR
             diagnosis.BodyComposition = BodyCompositions; 
             diagnosis.Measure = Measure;
 
+            diagnosis.Image = RegisterRecordInfo.Instance.Diagnosis.Image; 
+
             SaveDiagnosis(); 
         }
 
         //Methods
         private async void SaveDiagnosis()
         {
-            ProgressManagementServiceClient client = new();
-            client.InnerChannel.OperationTimeout = TimeSpan.FromSeconds(10);
+
+            var binding = new BasicHttpBinding
+            {
+                MaxReceivedMessageSize = int.MaxValue,
+                MaxBufferSize = int.MaxValue,
+                MaxBufferPoolSize = int.MaxValue,
+                ReaderQuotas = new System.Xml.XmlDictionaryReaderQuotas
+                {
+                    MaxDepth = int.MaxValue,
+                    MaxStringContentLength = int.MaxValue,
+                    MaxArrayLength = int.MaxValue,
+                    MaxBytesPerRead = int.MaxValue,
+                    MaxNameTableCharCount = int.MaxValue
+                }
+            };
+
+            // Endpoint address del servicio
+            var endpointAddress = new EndpointAddress("http://localhost:50933/Services/ProgressManagementService.svc");
+
+            ProgressManagementServiceClient client = new(binding, endpointAddress);
+            client.InnerChannel.OperationTimeout = TimeSpan.FromSeconds(60);
 
             string title, message;
             try

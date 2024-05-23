@@ -34,6 +34,8 @@ namespace ProgressManagementService
         
         private int IdDiagnosisField;
         
+        private ProgressManagementService.DiagnosisImage ImageField;
+        
         private ProgressManagementService.Measure MeasureField;
         
         private int PatientIdField;
@@ -151,6 +153,19 @@ namespace ProgressManagementService
             set
             {
                 this.IdDiagnosisField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ProgressManagementService.DiagnosisImage Image
+        {
+            get
+            {
+                return this.ImageField;
+            }
+            set
+            {
+                this.ImageField = value;
             }
         }
         
@@ -382,6 +397,73 @@ namespace ProgressManagementService
             set
             {
                 this.WaterPercentageField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DiagnosisImage", Namespace="http://schemas.datacontract.org/2004/07/HealthDiveneSysServer.Entities")]
+    public partial class DiagnosisImage : object
+    {
+        
+        private string CommentsField;
+        
+        private int IdDiagnosisField;
+        
+        private int IdImageField;
+        
+        private byte[] ImageField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Comments
+        {
+            get
+            {
+                return this.CommentsField;
+            }
+            set
+            {
+                this.CommentsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdDiagnosis
+        {
+            get
+            {
+                return this.IdDiagnosisField;
+            }
+            set
+            {
+                this.IdDiagnosisField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdImage
+        {
+            get
+            {
+                return this.IdImageField;
+            }
+            set
+            {
+                this.IdImageField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Image
+        {
+            get
+            {
+                return this.ImageField;
+            }
+            set
+            {
+                this.ImageField = value;
             }
         }
     }

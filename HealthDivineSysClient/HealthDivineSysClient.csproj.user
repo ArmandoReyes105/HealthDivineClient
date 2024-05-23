@@ -25,6 +25,9 @@
     <Compile Update="Modules\ProgressManagementModule\ConsultHistory\View\MeasureHistoryControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Modules\ProgressManagementModule\CreateProgressRecord\View\AddImagePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Modules\ProgressManagementModule\CreateProgressRecord\View\DiagnosisFormPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -121,6 +124,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Modules\ProgressManagementModule\ConsultHistory\View\MeasureHistoryControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\ProgressManagementModule\CreateProgressRecord\View\AddImagePage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Modules\ProgressManagementModule\CreateProgressRecord\View\DiagnosisFormPage.xaml">
