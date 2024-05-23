@@ -17,7 +17,7 @@
 
         <DockPanel>
             <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" VerticalAlignment="Center">
-                <Button Content="&#xf177;" Style="{StaticResource Icon_Button}" VerticalAlignment="Center" />
+                <Button Content="&#xf177;" Style="{StaticResource Icon_Button}" VerticalAlignment="Center" Click="Return_Click"/>
                 <TextBlock Text="Mis pacientes >> Historial" Style="{StaticResource Normal_Text}" VerticalAlignment="Center" Margin="15 0 0 0"/>
             </StackPanel>
 

@@ -20,7 +20,6 @@ namespace HealthDivineSysClient.Modules.ProgressManagementModule.ConsultHistory.
 {
     public class MeasureHistoryViewModel : ViewModelBase
     {
-        //Atributes
 
         //Fields
         private ObservableCollection<MeasureInfo> _measures = new ObservableCollection<MeasureInfo>();
