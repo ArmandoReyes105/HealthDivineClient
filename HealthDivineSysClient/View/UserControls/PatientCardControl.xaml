@@ -33,6 +33,7 @@
     </UserControl.Resources>
 
     <Grid Name="Main_Grid" MouseEnter="ShowEnterAnimation" MouseLeave="ShowLeaveAnimation">
+
         <Border Background="{StaticResource PrimaryColor}" CornerRadius="5" BorderThickness="3 0 0 0" BorderBrush="{StaticResource SecondaryColor}">
             <Grid>
                 <Grid.RowDefinitions>
@@ -44,7 +45,7 @@
                 <!--Header-->
                 <DockPanel Margin="10 10 10 0">
                     <Image Source="{Binding GenderImage}" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                    <Button Style="{StaticResource Icon_Button}" Content="&#xf142;" Height="24" Width="24" FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="-0 0"/>
+                    <Button Style="{StaticResource Icon_Button}" Content="&#xf142;" Height="24" Width="24" FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="-0 0" Visibility="Collapsed"/>
                 </DockPanel>
                 <!--Content-->
                 <StackPanel VerticalAlignment="Bottom" Grid.Row="1" Margin="10 0 10 10">
@@ -64,12 +65,28 @@
                     </Grid.ColumnDefinitions>
 
                     <Border Background="{StaticResource SecondaryColor}" Grid.ColumnSpan="3" CornerRadius="5" Margin="-1 0 0 0"/>
-                    <Button Content="&#xf7e6;" Height="32" Width="32" VerticalAlignment="Top" Margin="0 5" Grid.Column="0" Style="{StaticResource Circle_Button}"/>
-                    <Button Content="&#xe0e3;" Height="32" Width="32" VerticalAlignment="Top" Margin="0 5" Grid.Column="1" Style="{StaticResource Circle_Button}"/>
-                    <Button Content="&#xf271;" Height="32" Width="32" VerticalAlignment="Top" Margin="0 5" Grid.Column="2" Style="{StaticResource Circle_Button}" Command="{Binding ScheduleAppointmentCommand}"/>
+                    <Button Content="&#xe0bb;" Height="32" Width="32" VerticalAlignment="Top" Name="AddRecord_Button" Margin="0 5" Grid.Column="0" Style="{StaticResource Circle_Button}" Command="{Binding ProgressRecordCommand}"
+                            ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource Normal_Tooltip}" Content="Agregar registro"/>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button Content="&#xe0e3;" Height="32" Width="32" VerticalAlignment="Top" Margin="0 5" Grid.Column="1" Style="{StaticResource Circle_Button}" Command="{Binding ConsultHistoryCommand}"
+                            ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource Normal_Tooltip}" Content="Visualizar Historial"/>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button Content="&#xf271;" Height="32" Width="32" VerticalAlignment="Top" Margin="0 5" Grid.Column="2" Style="{StaticResource Circle_Button}" Command="{Binding ScheduleAppointmentCommand}"
+                            ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource Normal_Tooltip}" Content="Agendar cita"/>
+                        </Button.ToolTip>
+                    </Button>
                 </Grid>
                 <!--Bottom button-->
                 <Button Content="&#xf178;" Style="{StaticResource Icon_Button}" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="15" Margin="10 0 10 10" Command="{Binding ConsultPatientCommand}"/>
+
             </Grid>
         </Border>
     </Grid>

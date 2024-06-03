@@ -125,8 +125,8 @@ namespace HealthDivineSysClient.Modules.PlanManagementModule.ExportPDF.ViewModel
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-                mail.From = new MailAddress("super25rubik@gmail.com");
-                mail.To.Add("arrey105@gmail.com");
+                mail.From = new MailAddress("arrey105@gmail.com");
+                mail.To.Add(patient.Person.Email);
                 mail.Subject = "Plan Alimenticio";
                 mail.Body = "Adjunto encontrarás el plan alimenticio del paciente.";
 
@@ -134,7 +134,7 @@ namespace HealthDivineSysClient.Modules.PlanManagementModule.ExportPDF.ViewModel
                 mail.Attachments.Add(attachment);
 
                 SmtpServer.Port = 587;
-                SmtpServer.Credentials = new NetworkCredential("super25rubik@gmail.com", "cubosrubik");
+                SmtpServer.Credentials = new NetworkCredential("arrey105@gmail.com", "yybxjtuyvazyshld");
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);

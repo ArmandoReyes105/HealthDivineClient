@@ -111,7 +111,6 @@ namespace HealthDivineSysClient.Modules.UserManagementModule.RegisterPatient.Vie
 
         private void ExecuteGoToMenuCommand(object obj)
         {
-            DialogManager.ShowNotification("Ir a menu", "Navega a la página menu");
             NavigationManager.Instance.NavigateTo(new PatientListPage());
         }
 
@@ -131,7 +130,7 @@ namespace HealthDivineSysClient.Modules.UserManagementModule.RegisterPatient.Vie
             newPatient.GeneralInfomation = RegisterPatientInfo.Instance.NutritionalInfo;
             newPatient.HabitsAndGoals = RegisterPatientInfo.Instance.HabitsAndGoalsInfo;
             newPatient.Person.Phone = ConvertPhone(newPatient.Person.Phone);
-            newPatient.Nutritionist = 1;
+            newPatient.Nutritionist = SessionManager.Instance.GetNutritionistId();
 
             PatientName = newPatient.Person.Names + " " + newPatient.Person.FirstLastName + " " + newPatient.Person.SecondLastName;
 

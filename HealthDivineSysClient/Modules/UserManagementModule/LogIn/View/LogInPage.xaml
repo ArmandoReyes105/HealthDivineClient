@@ -1,0 +1,54 @@
+﻿<Page x:Class="HealthDivineSysClient.Modules.UserManagementModule.LogIn.View.LogInPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HealthDivineSysClient.Modules.UserManagementModule.LogIn.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="770" d:DesignWidth="1306"
+      Title="LogInPage">
+
+    <Grid Margin="20 0 0 0" Name="Main_Grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Name="Gradient_Border" CornerRadius="5" VerticalAlignment="Center" HorizontalAlignment="Center" Width="350" Height="350" Opacity=".15">
+            <Border.Background>
+                <RadialGradientBrush GradientOrigin=".5, .5" Center=".5 ,.5" RadiusX=".5" RadiusY=".9">
+                    <GradientStop Color="{StaticResource ColorAccent}" Offset="0.0" />
+                    <GradientStop Color="{StaticResource ColorBackground}" Offset="1.0" />
+                </RadialGradientBrush>
+            </Border.Background>
+            <Border.Effect>
+                <BlurEffect Radius="500"/>
+            </Border.Effect>
+        </Border>
+
+        <StackPanel VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Health" Style="{StaticResource Title_Text}" FontSize="40"/>
+                <TextBlock Text=" Divine" Style="{StaticResource Title_Text}" Foreground="{StaticResource AccentColor}" FontSize="40"/>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center" Margin="0 40 0 0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Inicio de " Style="{StaticResource Title_Text}"/>
+                    <TextBlock Text="sesión" Style="{StaticResource Title_Text}" Foreground="{StaticResource AccentColor}"/>
+                </StackPanel>
+
+                <TextBlock Text="Nombre de usuario" Style="{StaticResource Normal_Text}" Margin="0 20 0 0"/>
+                <TextBox Name="Username_Textbox" Tag="Nombre de usuario" Style="{StaticResource Normal_TextBox}" Width="300" MaxLength="20"/>
+                <TextBlock Text="Contraseña" Style="{StaticResource Normal_Text}"/>
+                <PasswordBox Name="Password_Textbox" Style="{StaticResource Normal_PasswordBox}" Width="300" MaxLength="100"/>
+
+                <Button Content="Iniciar sesión" Style="{StaticResource Normal_Button}" Margin="0 40 0 0" Click="LogIn_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Viewbox Grid.Column="1">
+            <Image Source="/Resources/Images/Plate_Image.png"/>
+        </Viewbox>
+    </Grid>
+</Page>

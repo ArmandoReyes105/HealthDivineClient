@@ -44,4 +44,28 @@
         <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}"/>
     </Style>
 
+    <Style x:Key="Normal_Tooltip" TargetType="ToolTip">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontFamily" Value="{StaticResource Comfortaa-Regular}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Placement" Value="Right"/>
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Path VerticalAlignment="Center" Data="M12.5 29.4657C11.5774 29.3386 10.7307 28.8629 10.141 28.1259L1.88922 17.8111C0.574429 16.1676 0.574428 13.8324 1.88921 12.1889L10.141 1.87409C10.7307 1.13708 11.5774 0.66141 12.5 0.534272V29.4657Z" Fill="{StaticResource BackgroundColor}" Stroke="{StaticResource SecondaryColor}"/>
+                        
+                        <Border Grid.Column="1" Background="{StaticResource BackgroundColor}" CornerRadius="0 5 5 0" Height="30" BorderBrush="{StaticResource SecondaryColor}" BorderThickness="0 1 1 1" Margin="-1.5 0 0 0"/>
+                        <TextBlock Grid.Column="1" Text="{Binding}" Foreground="{StaticResource PrimaryTextColor}" Margin="10"/>
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

@@ -677,6 +677,58 @@ namespace UserManagementService
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Nutritionist", Namespace="http://schemas.datacontract.org/2004/07/HealthDiveneSysServer.Entities")]
+    public partial class Nutritionist : object
+    {
+        
+        private int IdNutritionistField;
+        
+        private UserManagementService.Person PersonField;
+        
+        private string ProfessionalIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdNutritionist
+        {
+            get
+            {
+                return this.IdNutritionistField;
+            }
+            set
+            {
+                this.IdNutritionistField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserManagementService.Person Person
+        {
+            get
+            {
+                return this.PersonField;
+            }
+            set
+            {
+                this.PersonField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProfessionalId
+        {
+            get
+            {
+                return this.ProfessionalIdField;
+            }
+            set
+            {
+                this.ProfessionalIdField = value;
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserManagementService.UserManagement")]
     public interface UserManagement
@@ -699,6 +751,9 @@ namespace UserManagementService
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UserManagement/FilterPatients", ReplyAction="http://tempuri.org/UserManagement/FilterPatientsResponse")]
         System.Threading.Tasks.Task<UserManagementService.Patient[]> FilterPatientsAsync(int nutritionistId, string filter);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UserManagement/LogIn", ReplyAction="http://tempuri.org/UserManagement/LogInResponse")]
+        System.Threading.Tasks.Task<UserManagementService.Nutritionist> LogInAsync(string username, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -779,6 +834,11 @@ namespace UserManagementService
         public System.Threading.Tasks.Task<UserManagementService.Patient[]> FilterPatientsAsync(int nutritionistId, string filter)
         {
             return base.Channel.FilterPatientsAsync(nutritionistId, filter);
+        }
+        
+        public System.Threading.Tasks.Task<UserManagementService.Nutritionist> LogInAsync(string username, string password)
+        {
+            return base.Channel.LogInAsync(username, password);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

@@ -102,9 +102,26 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0">
-                    <Button Style="{StaticResource Circle_Button}" Content="&#xf044;" Height="32" FontFamily="{StaticResource FontAwesomeRegular}" Command="{Binding ModifyAppointmentCommand}"/>
-                    <Button Style="{StaticResource Circle_Button}" Content="&#xf2ed;" Height="32" FontFamily="{StaticResource FontAwesomeRegular}" Command="{Binding DeleteAppointmentCommand}" Margin="10 0"/>
-                    <Button Style="{StaticResource Circle_Button}" Content="&#xf007;" Height="32" FontFamily="{StaticResource FontAwesomeRegular}"/>
+                    <Button Style="{StaticResource Circle_Button}" Content="&#xf044;" Height="32" FontFamily="{StaticResource FontAwesomeRegular}" Command="{Binding ModifyAppointmentCommand}"
+                                    ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource Normal_Tooltip}" Content="Reprogramar cita"/>
+                        </Button.ToolTip>
+                    </Button>
+                    
+                    <Button Style="{StaticResource Circle_Button}" Content="&#xf2ed;" Height="32" FontFamily="{StaticResource FontAwesomeRegular}" Command="{Binding DeleteAppointmentCommand}" Margin="10 0"
+                                    ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource Normal_Tooltip}" Content="Cancelar cita"/>
+                        </Button.ToolTip>
+                    </Button>
+                    
+                    <Button Style="{StaticResource Circle_Button}" Content="&#xf007;" Height="32" FontFamily="{StaticResource FontAwesomeRegular}" Visibility="Collapsed"
+                                    ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource Normal_Tooltip}" Content="Visualizar paciente"/>
+                        </Button.ToolTip>
+                    </Button>
                 </StackPanel>
             </Grid>
         </Border>

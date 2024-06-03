@@ -18,4 +18,5 @@
     <Color x:Key="ColorGray">#656565</Color>
     <Color x:Key="ColorSecondary">#272E3D</Color>
     <Color x:Key="ColorPrimary">#191E28</Color>
+    <Color x:Key="ColorBackground">#15161c</Color>
 </ResourceDictionary>

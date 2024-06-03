@@ -7,6 +7,9 @@ using System.Windows.Media.Imaging;
 using UserManagementService;
 using System.Windows.Input;
 using HealthDivineSysClient.Helpers;
+using HealthDivineSysClient.Modules.ProgressManagementModule.ConsultHistory.View;
+using System.Security.Cryptography.X509Certificates;
+using HealthDivineSysClient.Modules.ProgressManagementModule.CreateProgressRecord.View;
 
 namespace HealthDivineSysClient.ViewModel.UserControls
 {
@@ -52,12 +55,16 @@ namespace HealthDivineSysClient.ViewModel.UserControls
         //Commands
         public ICommand ScheduleAppointmentCommand { get; }
         public ICommand ConsultPatientCommand {  get; }
+        public ICommand ConsultHistoryCommand { get; }
+        public ICommand ProgressRecordCommand { get; }
 
         //Constructor
         public PatientCardViewModel()
         {
             ScheduleAppointmentCommand = new RelayCommand(ExecuteScheduleAppointmentCommand);
-            ConsultPatientCommand = new RelayCommand(ExecuteConsultPatientCommand); 
+            ConsultPatientCommand = new RelayCommand(ExecuteConsultPatientCommand);
+            ConsultHistoryCommand = new RelayCommand(ExecuteConsultHistoryCommand);
+            ProgressRecordCommand = new RelayCommand(ExecuteProgressRecordCommand); 
         }
 
         //CommandsImplementation
@@ -69,6 +76,16 @@ namespace HealthDivineSysClient.ViewModel.UserControls
         private void ExecuteConsultPatientCommand(object obj)
         {
             NavigationManager.Instance.NavigateTo(new PatientInfoPage(Patient)); 
+        }
+
+        private void ExecuteConsultHistoryCommand(object obj)
+        {
+            NavigationManager.Instance.NavigateTo(new HistoryPage(Patient.IdPatient)); 
+        }
+
+        private void ExecuteProgressRecordCommand(object obj)
+        {
+            NavigationManager.Instance.NavigateTo(new DiagnosisFormPage(Patient.IdPatient)); 
         }
 
         //Methods
