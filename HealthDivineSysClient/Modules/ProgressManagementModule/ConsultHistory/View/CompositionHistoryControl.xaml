@@ -4,9 +4,117 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HealthDivineSysClient.Modules.ProgressManagementModule.ConsultHistory.View"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns:Controls="clr-namespace:HealthDivineSysClient.View.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Border Background="Red" Height="500" Width="500"/>
+             d:DesignHeight="450" d:DesignWidth="1306">
+    <Grid Margin="0 20 0 0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Margin="0 0 20 0">
+
+            <Grid Margin="10 15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Fecha" Style="{StaticResource Normal_Text}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="Peso total" Style="{StaticResource Normal_Text}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+                <TextBlock Text="% de Musculo" Style="{StaticResource Normal_Text}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBlock Text="% de Grasa" Style="{StaticResource Normal_Text}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3"/>
+                <TextBlock Text="% de Agua" Style="{StaticResource Normal_Text}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4"/>
+                <TextBlock Text="Grasa Visceral" Style="{StaticResource Normal_Text}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5"/>
+            </Grid>
+
+            <ItemsControl ItemsSource="{Binding Compositions}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="{StaticResource PrimaryColor}" CornerRadius="5" Margin="0 0 0 10">
+                            <Grid Margin="10 15">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="{Binding Date}" Style="{StaticResource Normal_Text}"/>
+                                <TextBlock Text="{Binding TotalWeight}" Style="{StaticResource Normal_Text}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+                                <TextBlock Text="{Binding MusclePercentage}" Style="{StaticResource Normal_Text}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
+                                <TextBlock Text="{Binding FatPercentage}" Style="{StaticResource Normal_Text}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3"/>
+                                <TextBlock Text="{Binding WaterPercentage}" Style="{StaticResource Normal_Text}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4"/>
+                                <TextBlock Text="{Binding VisceralFat}" Style="{StaticResource Normal_Text}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+        </StackPanel>
+
+        <!--Buttons-->
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Margin="0 0 5 0">
+
+                <Grid Margin="10 15">
+                    <TextBlock Text="Composición actual" Style="{StaticResource Normal_Text}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+
+                <Controls:ConsultChartControl Icon="&#xf545;" Value="{Binding CurrentDiagnosis.BodyComposition.TotalWeight}" ValueType=" kg" Header="Peso total" Command="{Binding ShowChartCommand}" CommandParameter="1"/>
+                <Controls:ConsultChartControl Icon="&#xf545;" Value="{Binding CurrentDiagnosis.BodyComposition.FatPercentage}" ValueType=" %" Header="Grasa" Margin="0 5" Command="{Binding ShowChartCommand}" CommandParameter="2"/>
+                <Controls:ConsultChartControl Icon="&#xf545;" Value="{Binding CurrentDiagnosis.BodyComposition.VisceralFat}" ValueType=" cm" Header="Grasa V." Margin="0 0 0 5" Command="{Binding ShowChartCommand}" CommandParameter="3"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Margin="5 0 0 0">
+                <Grid Margin="10 15">
+                    <TextBlock Text="Medidas actuales" Style="{StaticResource Normal_Text}" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Hidden"/>
+                </Grid>
+                <Controls:ConsultChartControl Icon="&#xf545;" Value="{Binding CurrentDiagnosis.Measure.Arm}" ValueType=" %" Header="Musculo" Command="{Binding ShowChartCommand}" CommandParameter="4"/>
+                <Controls:ConsultChartControl Icon="&#xf545;" Value="{Binding CurrentDiagnosis.Measure.Waist}" ValueType=" %" Header="Agua" Margin="0 5" Command="{Binding ShowChartCommand}" CommandParameter="5"/>
+            </StackPanel>
+
+            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                <lvc:CartesianChart LegendLocation="None" Series="{Binding LineSeriesCollection}">
+
+                    <lvc:CartesianChart.AxisX>
+                        <lvc:Axis Title="Fecha" Labels="{Binding Labels}">
+                            <lvc:Axis.Separator>
+                                <lvc:Separator Step="1" />
+                            </lvc:Axis.Separator>
+                        </lvc:Axis>
+                    </lvc:CartesianChart.AxisX>
+
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis Title="{Binding ChartSelected}"></lvc:Axis>
+                    </lvc:CartesianChart.AxisY>
+
+                </lvc:CartesianChart>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

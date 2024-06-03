@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using HealthDivineSysClient.Helpers;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using UserManagementService;
@@ -48,7 +49,7 @@ namespace HealthDivineSysClient.Modules.ProgressManagementModule.ConsultHistory.
                         count++; 
                         break;
                     case "Composition_RadioButton":
-                        CompositionHistoryControl compositionControl = new();
+                        CompositionHistoryControl compositionControl = new(patientId);
                         Grid.SetRow(compositionControl, 2);
                         Principal_Grid.Children.Add(compositionControl);
                         break;
@@ -71,6 +72,11 @@ namespace HealthDivineSysClient.Modules.ProgressManagementModule.ConsultHistory.
             {
                 Principal_Grid.Children.Remove(elementToRemove);
             }
+        }
+
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationManager.Instance.NavigateBack(); 
         }
     }
 }

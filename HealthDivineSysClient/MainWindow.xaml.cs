@@ -3,6 +3,7 @@ using HealthDivineSysClient.Modules.UserManagementModule.ConsultPatient.View;
 using HealthDivineSysClient.Modules.SchedulingModule.CheckCalendar.View; 
 using System.Windows;
 using System.Windows.Controls;
+using HealthDivineSysClient.Modules.UserManagementModule.LogIn.View;
 
 namespace HealthDivineSysClient
 {
@@ -13,19 +14,9 @@ namespace HealthDivineSysClient
         {
             InitializeComponent();
 
-            /*Person person = new Person();
-            person.Names = "Cinthia";
-            person.FirstLastName = "Gonzalez";
-            person.SecondLastName = "Hernandez";
-
-
-            Patient patient = new Patient();
-            patient.IdPatient = 1;
-            patient.Person = person;*/
-
-
+            CloseSideBar(); 
             NavigationManager.Instance.Initialize(Frame_Main, this);
-            NavigationManager.Instance.NavigateTo(new PatientListPage()); 
+            NavigationManager.Instance.NavigateTo(new LogInPage()); 
         }
 
         public void DialogShown()
@@ -50,9 +41,24 @@ namespace HealthDivineSysClient
                         break;
                     case "Calendar_Button":
                         NavigationManager.Instance.NavigateTo(new CalendarPage());
+                        break;
+                    case "Logout_Button":
+                        NavigationManager.Instance.NavigateTo(new LogInPage());
+                        CloseSideBar();
+                        SessionManager.Instance.CloseSession();
                         break; 
                 }
             }
+        }
+
+        public void OpenSideBar()
+        {
+            SideBar_Grid.Width = 64;
+        }
+
+        public void CloseSideBar()
+        {
+            SideBar_Grid.Width = 0; 
         }
     }
 }

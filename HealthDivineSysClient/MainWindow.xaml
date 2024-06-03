@@ -17,14 +17,41 @@
         </Grid.ColumnDefinitions>
 
         <!--SideBar-->
-        <Grid Width="64">
-            <Border Background="{StaticResource PrimaryColor}"/>
-            <StackPanel>
-                <Button Name="Patients_Button" Style="{StaticResource Icon_Button}" Content="&#xf2bd;" FontFamily="{StaticResource FontAwesomeRegular}" Margin="0 20 0 0" Click="ChangeView"/>
-                <Button Name="Calendar_Button" Style="{StaticResource Icon_Button}" Content="&#xf133;" FontFamily="{StaticResource FontAwesomeRegular}" Margin="0 20" Click="ChangeView"/>
+        <Grid Width="64" Name="SideBar_Grid">
+            <Border Background="{StaticResource PrimaryColor}">
+                <Border.Effect>
+                    <DropShadowEffect Direction="0" Opacity=".5" BlurRadius="10"/>
+                </Border.Effect>
+            </Border>
+            <StackPanel Margin="0 20">
+                <Image Source="Resources/Images/Logo.png" Width="30"/>
+                <Border Background="White" Height="1" Margin="10 20"/>
+                <Button Name="Patients_Button" Style="{StaticResource Icon_Button}" Content="&#xf2bd;" FontFamily="{StaticResource FontAwesomeRegular}" Click="ChangeView"
+                        ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
+                    <Button.ToolTip>
+                        <ToolTip Content="Mis pacientes" Style="{StaticResource Normal_Tooltip}"/>
+                    </Button.ToolTip>
+                </Button>
+                <Button Name="Calendar_Button" Style="{StaticResource Icon_Button}" Content="&#xf133;" FontFamily="{StaticResource FontAwesomeRegular}" Margin="0 20" Click="ChangeView"
+                                ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
+                    <Button.ToolTip>
+                        <ToolTip Content="Mi calendario" Style="{StaticResource Normal_Tooltip}"/>
+                    </Button.ToolTip>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Margin="0 20" VerticalAlignment="Bottom">
+                <Border Background="White" Height="1" Margin="10 0"/>
+
+                <Button Name="Logout_Button" Style="{StaticResource Icon_Button}" Content="&#xf08b;" Margin="0 20" Click="ChangeView"
+                ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
+                    <Button.ToolTip>
+                        <ToolTip Content="Cerrar sesión" Style="{StaticResource Normal_Tooltip}"/>
+                    </Button.ToolTip>
+                </Button>
             </StackPanel>
         </Grid>
-        
+
         <!--Content-->
         <Frame Name="Frame_Main" Grid.Column="1" Style="{StaticResource Frame}">
             

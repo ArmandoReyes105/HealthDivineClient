@@ -38,12 +38,12 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="20"/>
-                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <Controls:BigButtonControl Title="Guardar en escritorio" Message="¡Genial! El PDF se guardará en tu carpeta de Descargas. ¡Puedes encontrarlo fácilmente allí!" Icon="&#xf019;"
                                        Command="{Binding SaveCommand}"/>
-            <Controls:BigButtonControl Title="Enviar a paciente" Message="¡Genial! El PDF será enviado a su paciente mediante el correo registrado" Icon="&#xf1d8;" Grid.Column="2" Visibility="Collapsed"/>
+            <Controls:BigButtonControl Title="Enviar a paciente" Message="¡Genial! El PDF será enviado a su paciente mediante el correo registrado" Icon="&#xf1d8;" Grid.Column="2" Visibility="Visible" Command="{Binding SendCommand}"/>
         </Grid>
     </Grid>
 </Page>

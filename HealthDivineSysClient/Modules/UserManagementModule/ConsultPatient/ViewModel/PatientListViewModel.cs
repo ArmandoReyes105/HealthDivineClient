@@ -153,7 +153,7 @@ namespace HealthDivineSysClient.Modules.UserManagementModule.ConsultPatient.View
 
             try
             {
-                myPatients = await client.GetMyPatientsAsync(1);
+                myPatients = await client.GetMyPatientsAsync(SessionManager.Instance.GetNutritionistId());
 
                 if (myPatients != null)
                 {

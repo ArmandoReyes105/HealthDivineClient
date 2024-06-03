@@ -25,6 +25,9 @@
     <Compile Update="Modules\ProgressManagementModule\ConsultHistory\View\MeasureHistoryControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Modules\ProgressManagementModule\CreateProgressRecord\View\AddImagePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Modules\ProgressManagementModule\CreateProgressRecord\View\DiagnosisFormPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -50,6 +53,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Modules\UserManagementModule\ConsultPatient\View\PatientListPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Modules\UserManagementModule\LogIn\View\LogInPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Modules\UserManagementModule\ModifyPatient\View\ModifyMedicalPage.xaml.cs">
@@ -91,6 +97,9 @@
     <Compile Update="View\UserControls\DividerControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\UserControls\MediumButtonControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\UserControls\PatientCardControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -123,6 +132,9 @@
     <Page Update="Modules\ProgressManagementModule\ConsultHistory\View\MeasureHistoryControl.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Modules\ProgressManagementModule\CreateProgressRecord\View\AddImagePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Modules\ProgressManagementModule\CreateProgressRecord\View\DiagnosisFormPage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -145,6 +157,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Modules\UserManagementModule\ConsultPatient\View\PatientInfoPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Modules\UserManagementModule\LogIn\View\LogInPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Modules\UserManagementModule\ModifyPatient\View\ModifyMedicalPage.xaml">
@@ -214,6 +229,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\UserControls\DividerControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\MediumButtonControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\UserControls\PatientCardControl.xaml">

@@ -31,18 +31,26 @@ namespace HealthDivineSysClient.Modules.ProgressManagementModule.CreateProgressR
         //Commands
         public ICommand NextCommand { get; }
         public ICommand ReturnCommand { get; }
+        public ICommand AddImageCommand { get; }
 
         //Constructor
         public DiagnosisFormViewModel(int id)
         {
             NextCommand = new RelayCommand(ExecuteNextCommand);
-            ReturnCommand = new RelayCommand(ExecuteReturnCommand); 
+            ReturnCommand = new RelayCommand(ExecuteReturnCommand);
+            AddImageCommand = new RelayCommand(ExecuteAddImageCommand); 
 
             patientId = id;
             Diagnosis.PatientId = patientId;
         }
 
         //Commands Methods
+
+        private void ExecuteAddImageCommand(object obj)
+        {
+            NavigationManager.Instance.NavigateTo(new AddImagePage()); 
+        }
+
         private void ExecuteNextCommand(object obj)
         {
             if (AreFieldsComplete())

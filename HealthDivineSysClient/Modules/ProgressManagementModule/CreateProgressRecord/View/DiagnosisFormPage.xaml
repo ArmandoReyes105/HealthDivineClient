@@ -79,6 +79,7 @@
                 <Controls:DividerControl DividerText="Comentarios"/>
                 <TextBlock Text="Comentarios" Style="{StaticResource Small_Text}"><Run Text=" *" Foreground="Red"/></TextBlock>
                 <TextBox Text="{Binding Diagnosis.GeneralComments}" Style="{StaticResource Normal_TextBox}" Tag="¿Algo que considere relevante?"/>
+                <Button Content="Agregar imagen" Style="{StaticResource Border_Button}" Width="200" HorizontalAlignment="Right" Command="{Binding AddImageCommand}"/>
             </StackPanel>
         </Grid>
         

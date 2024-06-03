@@ -41,5 +41,16 @@ namespace HealthDivineSysClient.Helpers
             grid.BeginAnimation(UIElement.OpacityProperty, animation);
         }
 
+        public static void FadeIn(UIElement uiElement, double durationInSeconds)
+        {
+            DoubleAnimation animation = new DoubleAnimation
+            {
+                From = 0,
+                To = 1,
+                Duration = TimeSpan.FromSeconds(durationInSeconds)
+            };
+
+            uiElement.BeginAnimation(UIElement.OpacityProperty, animation);
+        }
     }
 }

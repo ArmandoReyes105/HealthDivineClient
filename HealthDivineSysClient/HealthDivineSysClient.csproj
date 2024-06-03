@@ -19,10 +19,12 @@
     <None Remove="Resources\Images\Cintura_Image.png" />
     <None Remove="Resources\Images\FemaleUser_Image.png" />
     <None Remove="Resources\Images\Loading_Animation.json" />
+    <None Remove="Resources\Images\Logo.png" />
     <None Remove="Resources\Images\MaleUser_Image.png" />
     <None Remove="Resources\Images\Muslo_Image.png" />
     <None Remove="Resources\Images\Pantorrilla_Image.png" />
     <None Remove="Resources\Images\Pecho_Image.png" />
+    <None Remove="Resources\Images\Plate_Image.png" />
     <None Remove="Resources\Images\Search_Animation.json" />
   </ItemGroup>
 
@@ -71,6 +73,9 @@
     <Resource Include="Resources\Images\FemaleUser_Image.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Images\Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Images\MaleUser_Image.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -83,9 +88,16 @@
     <Resource Include="Resources\Images\Pecho_Image.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Images\Plate_Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Images\Search_Animation.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Modules\UserManagementModule\LogIn\ViewModel\" />
   </ItemGroup>
 
 </Project>

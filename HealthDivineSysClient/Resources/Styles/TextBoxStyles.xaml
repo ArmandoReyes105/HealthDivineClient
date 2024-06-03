@@ -100,4 +100,48 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="Normal_PasswordBox" TargetType="PasswordBox">
+        <Setter Property="Background" Value="{StaticResource SecondaryColor}"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Margin" Value="0 5 0 15"/>
+        <Setter Property="CaretBrush" Value="{StaticResource PrimaryTextColor}"/>
+        <Setter Property="MinHeight" Value="40"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="{StaticResource Comfortaa-Regular}"/>
+        <Setter Property="Padding" Value="6 3"/>
+        <Setter Property="Cursor" Value="IBeam"/>
+        <Setter Property="AllowDrop" Value="True"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}"/>
+        <Setter Property="IsEnabled" Value="True"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="PasswordBox">
+                    <Border Background="{TemplateBinding Background}"
+                        CornerRadius="5"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}">
+
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <TextBlock x:Name="Placeholder" Text="{TemplateBinding Tag}" Foreground="{StaticResource HolderTextColor}" Visibility="Collapsed" VerticalAlignment="Center" Padding="{TemplateBinding Padding}"/>
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" Value="{StaticResource AccentColor}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+            </Trigger>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="BorderBrush" Value="{StaticResource AccentColor}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
 </ResourceDictionary>

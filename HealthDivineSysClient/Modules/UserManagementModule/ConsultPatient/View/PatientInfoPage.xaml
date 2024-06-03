@@ -17,8 +17,14 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+
         <!--Header-->
-        <DockPanel>
+        <DockPanel Grid.ColumnSpan="3">
             <StackPanel Orientation="Horizontal" >
                 <Button Content="&#xf177;" Style="{StaticResource Icon_Button}" Margin="0 0 10 0" VerticalAlignment="Center" Command="{Binding ReturnCommand}"/>
                 <TextBlock Text="Mis pacientes >> " Style="{StaticResource Normal_Text}" VerticalAlignment="Center"/>
@@ -31,12 +37,7 @@
         </DockPanel>
 
         <!--Personal Content-->
-        <Grid Grid.Row="1" Margin="0 20 0 0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-            </Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" Margin="0 20 0 0" Grid.ColumnSpan="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -108,7 +109,7 @@
                                         </StackPanel>
                                     </StackPanel>
                                 </StackPanel>
-                                
+
                                 <StackPanel HorizontalAlignment="Right">
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                                         <TextBlock Text="Correo: " Style="{StaticResource Normal_Text}" Foreground="{StaticResource HolderTextColor}"/>
@@ -120,30 +121,18 @@
                                     </StackPanel>
                                 </StackPanel>
                             </DockPanel>
-                            
+
                         </Grid>
 
                     </Grid>
                 </Grid>
             </Border>
 
-            <StackPanel Grid.Column="1" Margin="20 0 0 0">
-                <Button Content="Agregar registro" Width="170" Style="{StaticResource Normal_Button}" Command="{Binding ProgressRecordCommand}" CommandParameter="1"/>
-                <Button Content="Crear Plan" Width="170" Style="{StaticResource Normal_Button}" Command="{Binding MealPlanCommand}" CommandParameter="1" Margin="0 10 0 0"/>
-                <Button Content="Enviar Plan" Width="170" Style="{StaticResource Normal_Button}" Command="{Binding MealPlanCommand}" CommandParameter="3" Margin="0 10 0 0"/>
-            </StackPanel>
-
-            <StackPanel Grid.Column="2" Margin="20 0 0 0">
-                <Button Content="Modificar registro" Width="170" Style="{StaticResource Border_Button}" Command="{Binding ProgressRecordCommand}" CommandParameter="2" Margin="0 0 0 0"/>
-                <Button Content="Modificar plan" Width="170" Style="{StaticResource Border_Button}" Command="{Binding MealPlanCommand}" CommandParameter="2" Margin="0 10 0 0"/>
-                <Button Content="Ver historial" Width="170" Style="{StaticResource Normal_Button}" Command="{Binding HistoryCommand}"/>
-            </StackPanel>
-
         </Grid>
 
         <!--RadioButtons-->
         <StackPanel Grid.Row="2" Margin="0 20 0 0" Orientation="Horizontal">
-            <RadioButton Width="120" Style="{StaticResource BigIcon_RadioButton}" Tag="&#xf21e;" Content="Medica" IsChecked="True" Height="65"/>
+            <RadioButton Style="{StaticResource Underline_RadioButton}" Tag="&#xf21e;" Content="Información Medica" IsChecked="True"/>
         </StackPanel>
 
         <!--Medical panel-->
@@ -197,5 +186,49 @@
                 </StackPanel>
             </Grid>
         </Border>
+        
+        <!--Patient Options-->
+        <StackPanel Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Margin="0 20 0 0">
+            <Controls:MediumButtonControl 
+                Margin="0 0 0 10"
+                Title="Historial del paciente" 
+                Message="Aquí visualizará gráficas y una tabla interactiva que muestran el progreso de su paciente en medidas y composicion corporal"  
+                Icon="&#xe0e3;"
+                Command="{Binding HistoryCommand}"/>
+            <Controls:MediumButtonControl 
+                Margin="0 0 0 10"
+                Title="+ Agregar registro" 
+                Message="Crea un nuevo registro para tu paciente ingresando datos como, medidas corporales y composicion corporal"  
+                Icon="&#xe0bb;"
+                Command="{Binding ProgressRecordCommand}" CommandParameter="1"/>
+            <Controls:MediumButtonControl
+                Margin="0 0 0 10"
+                Title="+ Crear plan alimenticio"
+                Message="Defina las comidas, equivalencias nutricionales y ejemplos practicos para el nuevo plan alimenticio de su paciente"
+                Icon="&#xe55a;"
+                Command="{Binding MealPlanCommand}" CommandParameter="1"/>
+            <Controls:MediumButtonControl
+                Margin="0 0 0 10"
+                Title="Exportar plan alimenticio"
+                Message="Guárda el PDF en tu computadora o envíalo por correo a tu paciente"
+                Icon="&#xf019;"
+                Command="{Binding MealPlanCommand}" CommandParameter="3"/>
+
+            <Border Background="{StaticResource PrimaryTextColor}" CornerRadius="1" Margin="0 0 0 10" Height="1"/>
+
+            <Controls:MediumButtonControl
+                Margin="0 0 0 10"
+                Title="Modificar registro"
+                Message="Actualiza fácilmente la última información guardada del registro de tu paciente"
+                Icon="&#xf044;"
+                Command="{Binding ProgressRecordCommand}" CommandParameter="2"/>
+            <Controls:MediumButtonControl
+                Margin="0 0 0 10"
+                Title="Modificar plan alimenticio"
+                Message="Actualiza el último plan alimenticio de tu paciente, pero no podras agregar o eliminar comidas"
+                Icon="&#xf044;"
+                Command="{Binding MealPlanCommand}" CommandParameter="2"/>
+
+        </StackPanel>
     </Grid>
 </Page>
